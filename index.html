@@ -1,147 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Isan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --green: #4C7C59;
-      --orange: #DA7635;
-      --red: #B23A48;
-      --light-bg: #F7F6F3;
-      --dark-text: #222;
-    }
-
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--dark-text);
-      background-color: var(--light-bg);
-      scroll-behavior: smooth;
+      padding: 0;
+      background-color: white;
+      color: #000;
+      line-height: 1.6;
     }
-
     header {
-      background: url('https://source.unsplash.com/1600x900/?thailand,isan') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
+      background: url('https://source.unsplash.com/1600x600/?isan,thailand') no-repeat center center/cover;
+      padding: 80px 20px;
       text-align: center;
-      padding: 0 1.5rem;
+      color: black;
     }
-
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3em;
       margin: 0;
     }
-
     header p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin-top: 1rem;
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto 0;
     }
-
     section {
-      padding: 4rem 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--green);
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+    h2 {
+      font-size: 2em;
+      color: #2f4f4f;
+      margin-bottom: 10px;
     }
-
-    .image-grid {
+    h3 {
+      font-size: 1.3em;
+      color: #444;
+    }
+    .craft-columns, .flavour-columns, .hospitality-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 20px;
     }
-
-    .image-grid img {
+    .craft-columns {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .flavour-columns {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .hospitality-columns {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .craft-columns img, .flavour-columns img, .landscape-entry img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
-
-    footer {
-      background-color: var(--green);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
+    .landscape-entry {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
+    .landscape-entry img {
+      width: 150px;
+      height: 100px;
+      margin-right: 15px;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Discover Isan</h1>
-    <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
-  </header>
+<header>
+  <h1>Discover Isan</h1>
+  <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
+</header>
 
-  <section id="about">
-    <h2>Welcome to Isan</h2>
-    <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit.</p>
-    <div class="image-grid">
-      <img src="https://source.unsplash.com/800x600/?thailand,temple" alt="Temple in Isan">
-      <img src="https://source.unsplash.com/800x600/?isan,landscape" alt="Isan landscape">
-      <img src="https://source.unsplash.com/800x600/?isan,culture" alt="Isan culture">
+<section id="about">
+  <h2>Welcome to Isan</h2>
+  <p>Isan, Thailand’s northeastern region, is a land of quiet contrast — where vibrant rice paddies stretch across flatlands and ancient ruins rise from red earth. Despite being the largest region in Thailand (covering about one-third of the country), it remains one of the least known internationally. Yet, it is rich in cultural identity, folklore, and a resilient spirit.</p>
+  <p>Isan is home to over 22 million people, with most communities engaged in agriculture, crafts, and emerging tourism. While it has long been seen as rural and underdeveloped, that view is rapidly changing as travelers, entrepreneurs, and investors discover its unique offerings.</p>
+  <h3>A Brief History of Isan</h3>
+  <p>Isan’s story is shaped by ancient civilizations, migration, and resilience. It shares cultural and linguistic ties with Laos, as much of its population speaks a Lao dialect and practices similar customs. Historically, the region was influenced by the Khmer Empire, and many ruins such as Phanom Rung and Prasat Hin Phimai reflect this legacy.</p>
+  <p>During the Ayutthaya and Rattanakosin periods, Isan became more integrated into Siam (Thailand), though economic and geographic barriers kept it isolated for centuries. In the 20th century, waves of migration to Bangkok and abroad brought remittances but also a sense of cultural marginalization. Today, Isan is regaining pride as it becomes more connected and celebrated for its heritage and creativity.</p>
+</section>
+
+<section id="crafts">
+  <h2>Arts & Crafts</h2>
+  <p>Isan’s creative expression lives in its villages — in hand-dyed silks, bamboo weaving, earthenware pottery, and festivals that combine art, music, and community ritual.</p>
+  <div class="craft-columns">
+    <div>
+      <h3>Silk Weaving</h3>
+      <img src="https://source.unsplash.com/400x300/?thai-silk" alt="Silk weaving placeholder">
+      <p>Isan silk is world-renowned, particularly from provinces like Surin and Khon Kaen. Using mudmee (ikat) and natural dyeing techniques, artisans produce patterns that reflect local myths and beliefs. Each piece can take weeks to complete and is often woven at home by women using traditional wooden looms.</p>
     </div>
-  </section>
-
-  <section id="crafts">
-    <h2>Craft & Silk</h2>
-    <p>From hand-woven silks dyed with mud-me and natural indigo to bamboo baskets and pottery, Isan’s artisanal culture is deeply rooted and passed down through generations.</p>
-    <div class="image-grid">
-      <img src="https://source.unsplash.com/800x600/?thailand,silk" alt="Isan silk">
-      <img src="https://source.unsplash.com/800x600/?thailand,weaving" alt="Weaving craft">
-      <img src="https://source.unsplash.com/800x600/?thailand,artisan" alt="Isan artisan">
+    <div>
+      <h3>Bamboo Craft</h3>
+      <img src="https://source.unsplash.com/400x300/?bamboo,thailand" alt="Bamboo craft placeholder">
+      <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
     </div>
-  </section>
-
-  <section id="food">
-    <h2>Flavours of Isan</h2>
-    <p>Known across Thailand for its bold, earthy flavours — think som tam (papaya salad), grilled meats, sticky rice, and fermented fish — Isan cuisine is a unique feast.</p>
-    <div class="image-grid">
-      <img src="https://source.unsplash.com/800x600/?thai,food" alt="Isan food">
-      <img src="https://source.unsplash.com/800x600/?somtam" alt="Som Tam">
-      <img src="https://source.unsplash.com/800x600/?thai,grill" alt="Grilled Isan food">
+    <div>
+      <h3>Pottery</h3>
+      <img src="https://source.unsplash.com/400x300/?pottery,thailand" alt="Pottery craft placeholder">
+      <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
     </div>
-  </section>
-
-  <section id="nature">
-    <h2>Landscapes & Nature</h2>
-    <p>Vast plains, rocky mountains, riverfront towns, and lush forests — Isan’s landscapes are quiet, majestic, and mostly undiscovered by mass tourism.</p>
-    <div class="image-grid">
-      <img src="https://source.unsplash.com/800x600/?thailand,nature" alt="Isan nature">
-      <img src="https://source.unsplash.com/800x600/?mekong,river" alt="Mekong River">
-      <img src="https://source.unsplash.com/800x600/?thai,landscape" alt="Isan scenery">
+    <div>
+      <h3>Other Crafts</h3>
+      <img src="https://source.unsplash.com/400x300/?thai-crafts" alt="Other crafts placeholder">
+      <p>Additional crafts include dyeing with indigo and herbs (Sakon Nakhon), knife-making and metalwork (Nakhon Ratchasima), handmade musical instruments like the khaen, and palm leaf weaving and lantern making for festivals.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Discover Isan. All rights reserved.
-  </footer>
+<section id="landscapes">
+  <h2>Landscapes & Nature</h2>
 
-</body>
-</html>
+  <h3>Natural Parks & Wonders</h3>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?mountains,thailand" alt="Phu Kradueng">
+    <p><strong>Phu Kradueng National Park:</strong> A sacred mountain and hiking destination offering cliff views and waterfalls.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?canyon,thailand" alt="Sam Phan Bok">
+    <p><strong>Sam Phan Bok:</strong> Known as the “Grand Canyon of Thailand,” a stunning riverbed with honeycomb-like rock formations.</p>
+  </div>
+
+  <h3>Historical Sites</h3>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?ancient-ruins,thailand" alt="Phu Phra Bat">
+    <p><strong>Phu Phra Bat Historical Park:</strong> A surreal stone landscape with ancient religious carvings and prehistoric dwellings.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?cliff,thailand" alt="Pha Taem">
+    <p><strong>Pha Taem National Park:</strong> Home to some of Asia’s oldest rock paintings and towering cliffs over the Mekong.</p>
+  </div>
+
+  <h3>Rivers & Wetlands</h3>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?river,thailand" alt="Chiang Khan">
+    <p><strong>Chiang Khan (Loei):</strong> A charming Mekong riverside town with colonial-era architecture and sunrise alms-giving rituals.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?lotus,lake" alt="Red Lotus Sea">
+    <p><strong>Red Lotus Sea (Udon Thani):</strong> A seasonal lake covered in pink lotuses — magical at sunrise.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?mekong,thailand" alt="Mekong towns">
+    <p><strong>Mekong River Provinces:</strong> Nakhon Phanom, Nong Khai, Mukdahan — riverfront towns with festivals and cross-border markets.</p>
+  </div>
+
+  <h3>Cultural & Community Sites</h3>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?forest,thailand" alt="Phu Ruea">
+    <p><strong>Phu Ruea:</strong> A misty plateau known for its cool weather and pine-covered hills.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?waterfall,thailand" alt="Tat Ton Waterfall">
+    <p><strong>Tat Ton Waterfall (Chaiyaphum):</strong> A serene cascade surrounded by forest and picnic areas.</p>
+  </div>
+  <div class="landscape-entry">
+    <img src="https://source.unsplash.com/200x150/?national-park,thailand" alt="Kaeng Tana">
+    <p><strong>Kaeng Tana National Park:</strong> Forested landscapes and rapids near Ubon Ratchathani.</p>
+  </div>
+</section>
+
+<section id="hospitality">
+  <h2>Hospitality: Hotels & Restaurants</h2>
+  <div class="hospitality-columns">
+    <div>
+      <h3>Hotels</h3>
+      <p>Boutique stays are on the rise, particularly in places like Loei, Ubon Ratchathani, and Nakhon Phanom. Many properties blend local materials with modern comforts, offering curated experiences such as cooking classes or textile workshops.</p>
+    </div>
+    <div>
+      <h3>Restaurants</h3>
+      <p>Traditional wooden eateries serve dishes from clay stoves and banana leaf wraps, but there’s also an emerging food scene. Michelin Guide Thailand has recognized several Isan establishments in cities like Khon Kaen and Ubon.</p>
+    </div>
+    <div>
+      <h3>Suggested Itineraries</h3>
+      <p>Visitors can follow themed trails — such as Silk & Craft Villages, Ancient Khmer Temples, or Mekong River Towns — each providing a different facet of Isan’s charm.</p>
+    </div>
+  </div>
+</section>
+
+<section id="flavours">
+  <h2>Flavours of Isan</h2>
+  <p>Isan cuisine is rustic, punchy, and deeply local — dishes are often grilled, fermented, or pounded by hand, with sticky rice as a staple.</p>
+  <div class="flavour-columns">
+    <div><img src="https://source.unsplash.com/400x300/?papaya-salad"><h3>Som Tam</h3><p>Spicy green papaya salad, in dozens of variations</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?larb"><h3>Larb & Nam Tok</h3><p>Chopped meat salads with mint, toasted rice, and lime</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?grilled-meat"><h3>Grilled Meats</h3><p>Moo ping, gai yang, sai krok Isan (fermented sausages)</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?sticky-rice"><h3>Sticky Rice</h3><p>Khao niew: eaten by hand, used to scoop everything</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?fish-sauce"><h3>Fermented Fish</h3><p>Pla ra: a key flavor base for sauces and soups</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?grilled-chicken"><h3>Kai Yang & Egg-Based</h3><p>Grilled chicken is iconic in Isan and eggs are used creatively</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?thai-soup"><h3>Soups & Stews</h3><p>Tom saep (sour/spicy soup), gang om (herb soup)</p></div>
+    <div><img src="https://source.unsplash.com/400x300/?thai-dessert"><h3>Desserts</h3><p>Khao niaow ma muang (mango sticky rice), coconut treats</p></div>
+  </div>
+</section>
