@@ -72,6 +72,52 @@
       margin-right: 15px;
       border-radius: 8px;
     }
+      @media (max-width: 768px) {
+      .craft-columns,
+      .flavour-columns,
+      .hospitality-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .craft-columns div,
+      .flavour-columns div,
+      .hospitality-columns div {
+        text-align: center;
+      }
+
+      .craft-columns img,
+      .flavour-columns img,
+      .hospitality-columns img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+      }
+
+      .landscape-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .landscape-entry img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+      }
+    }
+
+      .landscape-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .landscape-entry img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -201,3 +247,4 @@
     <div><img src="https://source.unsplash.com/400x300/?thai-dessert"><h3>Desserts</h3><p>Khao niaow ma muang (mango sticky rice), coconut treats</p></div>
   </div>
 </section>
+
