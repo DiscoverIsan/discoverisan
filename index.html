@@ -151,6 +151,29 @@
       text-decoration: underline;
     }
     @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 0;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-links.show {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .nav-toggle {
+    display: block;
+    color: white;
+  }
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
   header {
     background-attachment: scroll;
     background-position: center top;
@@ -186,18 +209,83 @@
         text-align: center;
       }
     }
-  </style>
+      .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 1em;
+    }
+    .nav-links.show {
+      display: block;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+        color: white;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        padding: 10px 0;
+      }
+      .nav-links a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+</style>
 </head>
 <body>
 <nav>
-  <a href="#about">About</a>
-  <a href="#crafts">Arts & Crafts</a>
-  <a href="#flavours">Flavours</a>
-  <a href="#landscapes">Landscapes</a>
-  <a href="#hospitality">Hospitality</a>
-  <a href="#business">Business</a>
-  <a href="#contact">Contact</a>
+  <div class="nav-container">
+    <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#crafts">Arts & Crafts</a>
+      <a href="#flavours">Flavours</a>
+      <a href="#landscapes">Landscapes</a>
+      <a href="#hospitality">Hospitality</a>
+      <a href="#business">Business</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const nav = document.getElementById('navLinks');
+      nav.classList.remove('show');
+    });
+  });
+</script>
 <header>
   <div>
     <h1>Discover Isan</h1>
@@ -383,4 +471,3 @@
 </section>
 </body>
 </html>
-
