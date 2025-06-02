@@ -18,7 +18,7 @@
     }
     nav {
       background-color: white;
-      color: #111;
+      color: black;
       padding: 10px 0;
       text-align: center;
       position: fixed;
@@ -28,7 +28,7 @@
       border-bottom: 1px solid #ddd;
     }
     nav a {
-      color: #111;
+      color: black;
       text-decoration: none;
       margin: 0 20px;
       font-weight: 500;
@@ -38,21 +38,75 @@
       text-transform: uppercase;
     }
     nav a:hover {
-    border-bottom: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: black;
+      font-family: 'Georgia', serif;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .nav-links.show {
+      display: block;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+      }
+      .nav-links a {
+        color: black;
+        display: block;
+        margin: 10px 0;
+      }
+      .nav-links.show {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
     header {
-  background: url('Discoverisan_Image1.jpg') no-repeat center center;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
+      background: url('Discoverisan_Image1.jpg') no-repeat center center;
+      background-attachment: fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
     header::after {
       content: '';
       position: absolute;
@@ -92,244 +146,93 @@
       color: #333;
       margin-top: 15px;
     }
-    .craft-columns, .flavour-columns, .hospitality-columns {
+    .craft-columns {
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 30px;
     }
-    .craft-columns {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .flavour-columns {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .hospitality-columns {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .craft-columns div,
-    .flavour-columns div,
-    .hospitality-columns div {
+    .craft-columns div {
       background: #f8f8f8;
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
     }
-    .craft-columns img, .flavour-columns img, .hospitality-columns img, .landscape-entry img {
+    .craft-columns img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 10px;
     }
-    .landscape-entry {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 30px;
-      background: #fdfdfd;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
     }
-    .landscape-entry img {
-      width: 200px;
-      height: 130px;
-      margin-right: 20px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-    footer p {
-      margin: 0;
-      font-size: 0.9em;
-    }
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #111;
-    padding: 10px 0;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  .nav-links.show {
-    display: flex;
-    transform: translateY(0);
-    opacity: 1;
-  }
-  .nav-toggle {
-    display: block;
-    color: white;
-  }
-  .nav-links a {
-    display: block;
-    margin: 10px 0;
-  }
-  header {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-  header h1 {
-    font-size: 2em;
-  }
-  header p {
-    font-size: 1em;
-    padding: 0 20px;
-  }
-      .craft-columns,
-      .flavour-columns,
-      .hospitality-columns {
-        grid-template-columns: 1fr;
-      }
-      .craft-columns div,
-      .flavour-columns div,
-      .hospitality-columns div {
-        text-align: center;
-      }
-      .craft-columns img,
-      .flavour-columns img,
-      .hospitality-columns img,
-      .landscape-entry img {
-        width: 100%;
-        height: auto;
-        margin: 0 0 10px 0;
-      }
-      .landscape-entry {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-      .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .nav-toggle {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 600;
-      font-size: 1em;
-    }
-    .nav-links.show {
-      display: block;
-      text-align: left;
-    }
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-        color: white;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #111;
-        padding: 10px 0;
-      }
-      .nav-links a {
-        display: block;
-        margin: 10px 0;
-      }
-    }
-</style>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          const nav = document.getElementById('navLinks');
+          nav.classList.remove('show');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-<nav>
-  <div class="nav-container">
-    <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#crafts">Arts & Crafts</a>
-      <a href="#flavours">Flavours</a>
-      <a href="#landscapes">Landscapes</a>
-      <a href="#hospitality">Hospitality</a>
-      <a href="#business">Business</a>
-      <a href="#contact">Contact</a>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#crafts">Arts & Crafts</a>
+        <a href="#flavours">Flavours</a>
+        <a href="#landscapes">Landscapes</a>
+        <a href="#hospitality">Hospitality</a>
+        <a href="#business">Business</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </div>
-</nav>
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
-  }
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      const nav = document.getElementById('navLinks');
-      nav.classList.remove('show');
-    });
-  });
-</script>
-<header>
-  <div>
-    <h1>Discover Isan</h1>
-    <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
-  </div>
-</header>
-<!-- Main Content Sections -->
-<section id="about">
-  <h2>Welcome to Isan</h2>
-  <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
-  <h3>History of Isan</h3>
-  <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
-</section>
+  </nav>
+  <header>
+    <div>
+      <h1>Discover Isan</h1>
+      <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
+    </div>
+  </header>
+  <section id="about">
+    <h2>Welcome to Isan</h2>
+    <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
+    <h3>History of Isan</h3>
+    <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
+  </section>
 
-<section id="crafts">
-  <h2>Arts & Crafts</h2>
-  <div class="craft-columns">
-    <div>
-      <img src="Discoverisan_ImageAC1.jpg" alt="Silk Weaving">
-      <h3>Silk Weaving</h3>
-      <p>Silk weaving is an ancient and intricate art in Isan, especially in Khon Kaen and Surin. Using natural dyes and hand looms, artisans craft exquisite pieces of mudmee (ikat) silk with vibrant motifs.</p>
+  <section id="crafts">
+    <h2>Arts & Crafts</h2>
+    <div class="craft-columns">
+      <div>
+        <img src="Discoverisan_ImageAC1.jpg" alt="Silk Weaving">
+        <h3>Silk Weaving</h3>
+        <p>Silk weaving is an ancient and intricate art in Isan, especially in Khon Kaen and Surin. Using natural dyes and hand looms, artisans craft exquisite pieces of mudmee (ikat) silk with vibrant motifs.</p>
+      </div>
+      <div>
+        <img src="Discoverisan_ImageAC2.jpg" alt="Bamboo Craft">
+        <h3>Bamboo Craft</h3>
+        <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
+      </div>
+      <div>
+        <img src="Discoverisan_ImageAC3.jpg" alt="Pottery">
+        <h3>Pottery</h3>
+        <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
+      </div>
+      <div>
+        <img src="Discoverisan_ImageAC4.jpg" alt="Other Crafts">
+        <h3>Other Crafts</h3>
+        <p>Additional crafts include indigo dyeing (Sakon Nakhon), knife-making (Nakhon Ratchasima), khaen instrument-making, and palm-leaf weaving for lanterns and ceremonial items.</p>
+      </div>
     </div>
-    <div>
-      <img src="Discoverisan_ImageAC2.jpg" alt="Bamboo Craft">
-      <h3>Bamboo Craft</h3>
-      <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageAC3.jpg" alt="Pottery">
-      <h3>Pottery</h3>
-      <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageAC4.jpg" alt="Other Crafts">
-      <h3>Other Crafts</h3>
-      <p>Additional crafts include indigo dyeing (Sakon Nakhon), knife-making (Nakhon Ratchasima), khaen instrument-making, and palm-leaf weaving for lanterns and ceremonial items.</p>
-    </div>
-  </div>
-</section>
-
+  </section>
 
 
 
