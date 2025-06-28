@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Isan</title>
   <style>
+    .logo img {
+  height: 30px;
+  margin-right: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
     html {
       scroll-behavior: smooth;
     }
@@ -264,8 +273,12 @@
 </style>
 </head>
 <body>
+<!-- Navigation bar -->
 <nav>
   <div class="nav-container">
+   <a href="#" class="logo">
+    <img src="discoverisan_logo.png" alt="Discover Isan Logo">
+  </a>
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
