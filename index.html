@@ -5,39 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Isan</title>
   <style>
-.header-bar {
+   nav {
   position: fixed;
   top: 0;
   width: 100%;
   background: white;
-  z-index: 1001;
-  border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
-.logo-container {
-  text-align: center;
-  padding: 10px 0;
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* center all items */
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
 }
-.logo-container img {
-  height: 60px; /* You can make this bigger if needed */
-}
-.logo-container {
-  text-align: center;
-  margin-top: 20px;
-}
-.logo-container img {
-  width: 100px; /* You can adjust this */
-  max-width: 150px;
-  height: auto;
-}
-    .logo img {
-  height: 30px;
+
+.nav-logo img {
+  height: 60px;  /* nicer size */
   margin-right: 20px;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+     
     html {
       scroll-behavior: smooth;
     }
@@ -74,9 +63,10 @@
       text-decoration: underline;
     }
     header {
-    padding-top: 140px; /* add this */
+  padding-top: 80px; /* same height as nav + margin */
 }
- background: url('Discoverisan_Image1.jpg') no-repeat center center;
+header {
+  background: url('Discoverisan_Image1.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
@@ -300,12 +290,17 @@
 </head>
 <body>
 <nav>
- <div class="header-bar">
-<div class="logo-container">
-    <img src="discoverisan_logo.png" alt="Discover Isan Logo">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <img src="discoverisan_logo.png" alt="Discover Isan Logo">
+    </a>
+    <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <div class="nav-links" id="navLinks">
+      <!-- links -->
+    </div>
   </div>
-  <nav>
-<div class="nav-container">
+ 
+  <div class="nav-container">
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
@@ -331,9 +326,6 @@
   });
 </script>
 <header>
-<div class="logo-container">
-  <img src="discoverisan_logo.png" alt="Discover Isan Logo">
-</div>
   <div>
     <h1>Discover Isan</h1>
     <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
