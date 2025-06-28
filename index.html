@@ -5,7 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Isan</title>
   <style>
-  .logo-container {
+.header-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 1001;
+  border-bottom: 1px solid #ddd;
+}
+.logo-container {
+  text-align: center;
+  padding: 10px 0;
+}
+.logo-container img {
+  height: 60px; /* You can make this bigger if needed */
+}
+.logo-container {
   text-align: center;
   margin-top: 20px;
 }
@@ -59,7 +74,9 @@
       text-decoration: underline;
     }
     header {
-  background: url('Discoverisan_Image1.jpg') no-repeat center center;
+    padding-top: 140px; /* add this */
+}
+ background: url('Discoverisan_Image1.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
@@ -283,7 +300,12 @@
 </head>
 <body>
 <nav>
-  <div class="nav-container">
+ <div class="header-bar">
+<div class="logo-container">
+    <img src="discoverisan_logo.png" alt="Discover Isan Logo">
+  </div>
+  <nav>
+<div class="nav-container">
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
