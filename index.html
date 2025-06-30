@@ -276,7 +276,7 @@
 <nav>
   <div class="nav-container">
     <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰ Menu</button>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#crafts">Arts & Crafts</a>
@@ -291,12 +291,17 @@
 <script>
   function toggleMenu() {
     const nav = document.getElementById('navLinks');
+    const toggle = document.querySelector('.nav-toggle');
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', (!expanded).toString());
     nav.classList.toggle('show');
   }
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       const nav = document.getElementById('navLinks');
+      const toggle = document.querySelector('.nav-toggle');
       nav.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
