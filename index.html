@@ -175,6 +175,15 @@
     display: block;
     color: black;
   }
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-logo {
+    height: 50px;
+    margin: 0;
+  }
   .nav-links a {
     display: block;
     margin: 10px 0;
@@ -214,14 +223,19 @@
         text-align: center;
       }
     }
-      .nav-container {
+    .nav-container {
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+    }
+    .site-logo {
+      height: 90px;
+      margin-bottom: 10px;
     }
     .nav-toggle {
       display: none;
@@ -241,14 +255,12 @@
       font-weight: normal;
       font-size: 1em;
     }
-    .nav-links.show {
-      display: flex;
-    }
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-container">
+    <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
