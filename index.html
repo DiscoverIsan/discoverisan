@@ -168,9 +168,12 @@
     margin: 0;
   }
   .nav-toggle {
-    display: flex;
+    display: block;
     margin-left: auto;
     z-index: 1001;
+    color: #111;
+    font-size: 1.5em;
+    cursor: pointer;
   }
   .nav-links {
     position: absolute;
@@ -317,25 +320,6 @@
     </div>
   </div>
 </nav>
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    const toggle = document.querySelector('.nav-toggle');
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', (!expanded).toString());
-    nav.classList.toggle('show');
-    toggle.classList.toggle('open');
-  }
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      const nav = document.getElementById('navLinks');
-      const toggle = document.querySelector('.nav-toggle');
-      nav.classList.remove('show');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.classList.remove('open');
-    });
-  });
-</script>
 <header>
   <div>
     <h1>Discover Isan</h1>
@@ -519,5 +503,24 @@
     <button type="submit" style="padding:10px 20px;background-color:#111;color:white;border:none;border-radius:5px;cursor:pointer;">Send</button>
   </form>
 </section>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const toggle = document.querySelector('.nav-toggle');
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', (!expanded).toString());
+    nav.classList.toggle('show');
+    toggle.classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const nav = document.getElementById('navLinks');
+      const toggle = document.querySelector('.nav-toggle');
+      nav.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
