@@ -171,6 +171,9 @@
     color: black;
     font-size: 1.5em;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
     z-index: 1001;
   }
   .nav-links {
@@ -250,6 +253,9 @@
       display: none;
       font-size: 1.5em;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
     }
     .nav-links {
       display: flex;
@@ -270,7 +276,7 @@
 <nav>
   <div class="nav-container">
     <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
-    <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰ Menu</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#crafts">Arts & Crafts</a>
