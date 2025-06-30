@@ -5,46 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Isan</title>
   <style>
-  /* Desktop logo styling */
-.desktop-logo {
-  display: block;
-  text-align: center;
-  padding: 15px 0 5px;
-}
-.desktop-logo img {
-  height: 90px;
-}
-
-/* Hide on mobile */
-@media (max-width: 768px) {
-  .desktop-logo {
-    display: none;
-  }
-
-  /* Logo inside nav (for mobile only) */
-  .nav-logo {
-    display: block;
-    margin-left: 10px;
-  }
-  .nav-logo img {
-    height: 40 
-    
-        
-    
-    nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
-  z-index: 1000;
-}
-
-.nav-logo img {
-  height: 45px;
-  mmargin-right: 20px;
-  display: block;
-}
-     
     html {
       scroll-behavior: smooth;
     }
@@ -81,9 +41,6 @@
       text-decoration: underline;
     }
     header {
-  padding-top: 80px; /* same height as nav + margin */
-}
-header {
   background: url('Discoverisan_Image1.jpg') no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
@@ -255,19 +212,13 @@ header {
         align-items: center;
         text-align: center;
       }
-      .logo {
-    margin-right: auto;
-        }
-.logo img {
-  height: 35px;
-  margin-right: 20px;
-}
-     .nav-container {
+    }
+      .nav-container {
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -312,12 +263,7 @@ header {
     }
 </style>
 </head>
-  <body>
-<!-- Desktop logo centered above the nav bar -->
-<div class="desktop-logo">
-  <img src="discoverisan_logo.png" alt="Discover Isan Logo">
-</div> 
-<!-- Navigation bar -->
+<body>
 <nav>
   <div class="nav-container">
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
