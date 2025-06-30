@@ -163,7 +163,7 @@
     flex-wrap: nowrap;
   }
   .site-logo {
-    height: 50px;
+    height: 40px;
     margin: 0;
   }
   .nav-toggle {
@@ -202,7 +202,7 @@
     align-items: center;
   }
   .site-logo {
-    height: 50px;
+    height: 40px;
     margin: 0;
   }
   .nav-links a {
@@ -267,6 +267,9 @@
       padding: 0;
     }
     .nav-links {
+      border-left: 1px solid #111;
+      border-right: 1px solid #111;
+      padding: 0 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -285,7 +288,7 @@
 <nav>
   <div class="nav-container">
     <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#crafts">Arts & Crafts</a>
