@@ -79,6 +79,7 @@
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
+      scroll-margin-top: 80px;
     }
     h2 {
       font-size: 2.5em;
@@ -155,24 +156,42 @@
       text-decoration: underline;
     }
     @media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .site-logo {
+    height: 50px;
+    margin: 0;
+  }
+  .nav-toggle {
+    display: block;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001;
+  }
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: #111;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
     padding: 10px 0;
     transform: translateY(-20px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
   }
   .nav-links.show {
     display: flex;
     transform: translateY(0);
     opacity: 1;
-  }
-  .nav-toggle {
-    display: block;
-    color: white;
   }
   .nav-links a {
     display: block;
@@ -213,14 +232,19 @@
         text-align: center;
       }
     }
-      .nav-container {
+    .nav-container {
       max-width: 1200px;
       margin: auto;
       padding: 0 20px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+    }
+    .site-logo {
+      height: 90px;
+      margin-bottom: 10px;
     }
     .nav-toggle {
       display: none;
@@ -240,32 +264,12 @@
       font-weight: normal;
       font-size: 1em;
     }
-    .nav-links.show {
-      display: block;
-      text-align: left;
-    }
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-        color: black;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        padding: 10px 0;
-      }
-      .nav-links a {
-        display: block;
-        margin: 10px 0;
-      }
-    }
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-container">
+    <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
     <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
