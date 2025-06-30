@@ -156,24 +156,46 @@
       text-decoration: underline;
     }
     @media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .site-logo {
+    height: 50px;
+    margin: 0;
+  }
+  .nav-toggle {
+    display: block;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 1001;
+  }
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: none;
     flex-direction: column;
-    width: 100%;
     background-color: white;
+    border-bottom: 1px solid #ddd;
+
     padding: 10px 0;
     transform: translateY(-20px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
   }
   .nav-links.show {
     display: flex;
     transform: translateY(0);
     opacity: 1;
-  }
-  .nav-toggle {
-    display: block;
-    color: black;
   }
   .nav-container {
     flex-direction: row;
@@ -184,6 +206,7 @@
     height: 50px;
     margin: 0;
   }
+>>>>>>> main
   .nav-links a {
     display: block;
     margin: 10px 0;
@@ -241,6 +264,9 @@
       display: none;
       font-size: 1.5em;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
     }
     .nav-links {
       display: flex;
@@ -261,7 +287,7 @@
 <nav>
   <div class="nav-container">
     <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
-    <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#crafts">Arts & Crafts</a>
@@ -276,12 +302,17 @@
 <script>
   function toggleMenu() {
     const nav = document.getElementById('navLinks');
+    const toggle = document.querySelector('.nav-toggle');
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', (!expanded).toString());
     nav.classList.toggle('show');
   }
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       const nav = document.getElementById('navLinks');
+      const toggle = document.querySelector('.nav-toggle');
       nav.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
 </script>
