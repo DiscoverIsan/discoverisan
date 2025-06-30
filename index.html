@@ -21,12 +21,7 @@
       color: #111;
       padding: 10px 0;
       text-align: center;
-      position: fixed;
-      top: 0;
       width: 100%;
-      z-index: 1000;
-      border-top: 1px solid #111;
-      border-bottom: 1px solid #111;
     }
     nav a {
       color: #111;
@@ -80,7 +75,6 @@
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
-      scroll-margin-top: 80px;
     }
     h2 {
       font-size: 2.5em;
@@ -163,10 +157,6 @@
     align-items: center;
     flex-wrap: nowrap;
   }
-  .site-logo {
-    height: 40px;
-    margin: 0;
-  }
   .nav-toggle {
     display: block;
     margin-left: auto;
@@ -199,10 +189,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-  .site-logo {
-    height: 40px;
-    margin: 0;
   }
   .nav-links a {
     display: block;
@@ -253,10 +239,6 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .site-logo {
-      height: 90px;
-      margin-bottom: 10px;
-    }
     .nav-toggle {
       display: none;
       width: 30px;
@@ -298,28 +280,53 @@
       font-weight: normal;
       font-size: 1em;
     }
+    .site-header {
+      background-color: white;
+    }
+
+    .logo-container {
+      text-align: center;
+      padding: 20px 0 10px;
+    }
+
+    .logo-container img {
+      height: 90px;
+    }
+
+    .pre-nav-line,
+    .post-nav-line {
+      height: 1px;
+      background-color: #ccc;
+      width: 100%;
+    }
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-container">
-    <img src="discoverisan_logo.png" alt="Discover Isan logo" class="site-logo">
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#crafts">Arts & Crafts</a>
-      <a href="#flavours">Flavours</a>
-      <a href="#landscapes">Landscapes</a>
-      <a href="#hospitality">Hospitality</a>
-      <a href="#business">Business</a>
-      <a href="#contact">Contact</a>
+  <div class="site-header">
+    <div class="logo-container">
+      <img src="discoverisan_logo.png" alt="Discover Isan Logo">
     </div>
+    <div class="pre-nav-line"></div>
+    <nav>
+      <div class="nav-container">
+        <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#crafts">Arts & Crafts</a>
+          <a href="#flavours">Flavours</a>
+          <a href="#landscapes">Landscapes</a>
+          <a href="#hospitality">Hospitality</a>
+          <a href="#business">Business</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="post-nav-line"></div>
   </div>
-</nav>
 <header>
   <div>
     <h1>Discover Isan</h1>
