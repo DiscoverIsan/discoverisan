@@ -206,11 +206,20 @@
         height: auto;
         margin: 0 0 10px 0;
       }
-      .landscape-entry {
+  .landscape-entry {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
+  .logo-container {
+    text-align: left;
+  }
+  .top-bar {
+    justify-content: space-between;
+  }
+  .top-right {
+    position: static;
+  }
     }
     .nav-container {
       max-width: 1200px;
@@ -282,7 +291,7 @@
     }
 
     .logo-container {
-      text-align: left;
+      text-align: center;
       padding: 20px 0 10px;
     }
 
@@ -298,16 +307,19 @@
     }
     .top-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       max-width: 1200px;
       margin: auto;
       padding: 10px 20px;
+      position: relative;
     }
     .top-right {
       display: flex;
       align-items: center;
       gap: 15px;
+      position: absolute;
+      right: 20px;
     }
     .subscribe-btn {
       background-color: #111;
