@@ -168,6 +168,12 @@
   .nav-links {
     display: none;
   }
+  nav {
+    display: none;
+  }
+  nav.active {
+    display: block;
+  }
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
@@ -559,18 +565,22 @@
 </section>
 <script>
   function toggleMenu() {
-    const nav = document.getElementById('navLinks');
+    const nav = document.querySelector('nav');
+    const navLinks = document.getElementById('navLinks');
     const toggle = document.querySelector('.nav-toggle');
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', (!expanded).toString());
-    nav.classList.toggle('show');
+    nav.classList.toggle('active');
+    navLinks.classList.toggle('show');
     toggle.classList.toggle('open');
   }
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      const nav = document.getElementById('navLinks');
+      const nav = document.querySelector('nav');
+      const navLinks = document.getElementById('navLinks');
       const toggle = document.querySelector('.nav-toggle');
-      nav.classList.remove('show');
+      nav.classList.remove('active');
+      navLinks.classList.remove('show');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.classList.remove('open');
     });
