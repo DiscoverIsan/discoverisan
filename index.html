@@ -166,24 +166,7 @@
     cursor: pointer;
   }
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
     display: none;
-    flex-direction: column;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 1000;
-  }
-  .nav-links.show {
-    display: flex;
-    transform: translateY(0);
-    opacity: 1;
   }
   .nav-container {
     flex-direction: row;
@@ -240,7 +223,7 @@
       flex-wrap: wrap;
     }
     .nav-toggle {
-      display: none;
+      display: block;
       width: 30px;
       height: 24px;
       flex-direction: column;
@@ -273,6 +256,20 @@
       justify-content: center;
       align-items: center;
     }
+    .nav-links.show {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      z-index: 1000;
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
     .nav-links a {
       color: black;
       text-decoration: none;
@@ -285,7 +282,7 @@
     }
 
     .logo-container {
-      text-align: center;
+      text-align: left;
       padding: 20px 0 10px;
     }
 
@@ -334,11 +331,11 @@
 <body>
   <div class="site-header">
     <div class="top-bar">
-        <button class="subscribe-btn">Subscribe</button>
         <div class="logo-container">
             <img src="discoverisan_logo.png" alt="Discover Isan Logo">
         </div>
         <div class="top-right">
+            <button class="subscribe-btn">Subscribe</button>
             <button class="search-btn">Search</button>
             <button class="sign-in-btn">Sign In</button>
             <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
