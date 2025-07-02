@@ -73,7 +73,7 @@
     }
 
     .nav-toggle {
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: space-between;
       width: 24px;
@@ -83,6 +83,7 @@
 
     .nav-toggle span {
       display: block;
+      width: 100%;
       height: 2px;
       background: #111;
     }
@@ -207,10 +208,10 @@
         order: 1;
       }
 
-      .nav-toggle {
-        display: flex;
-        order: 2;
-      }
+        .nav-toggle {
+          display: flex;
+          order: 2;
+        }
 
       .nav-links {
         width: 100%;
