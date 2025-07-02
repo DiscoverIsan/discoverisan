@@ -49,14 +49,8 @@
     }
 
     .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 20px;
-      background-color: white;
-      padding: 15px 20px;
-      border: 1px solid #ddd;
+      display: flex;
+      gap: 20px;
     }
 
     .nav-links a {
@@ -65,7 +59,6 @@
       font-size: 0.9em;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin: 10px 0;
     }
 
     .nav-links.show {
@@ -73,7 +66,7 @@
     }
 
     .nav-toggle {
-      display: none;
+      display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 24px;
@@ -214,10 +207,19 @@
         }
 
       .nav-links {
-        width: 100%;
-        left: 0;
+        display: none;
         flex-direction: column;
+        width: 100%;
+        background-color: white;
+        padding: 15px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
         border-top: 1px solid #ddd;
+      }
+
+      .nav-links.show {
+        display: flex;
       }
 
       .nav-container {
