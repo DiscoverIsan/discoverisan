@@ -50,16 +50,18 @@
       text-align: center;
       padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-        }
+    }
 
  
 
     .nav-links {
       display: flex;
       gap: 20px;
+      margin-top: 10px;
     }
 
     .nav-links a {
@@ -75,10 +77,10 @@
     }
 
     .nav-toggle {
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: space-between;
-       align-items: right;
+      align-items: center;
       width: 30px;
       height: 24px;
       cursor: pointer;
@@ -239,7 +241,9 @@
 
       .nav-container {
         flex-wrap: wrap;
-        position: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .nav-links a {
@@ -251,11 +255,10 @@
 </head>
 <body>
   <nav>
-     <div class="nav-logo">
+    <div class="nav-container">
+      <div class="nav-logo">
         <img src="discoverisan_logo.png" alt="Discover Isan Logo">
-  </div>
-       <div class="nav-container">
-          </div>
+      </div>
       <div class="nav-toggle" onclick="toggleMenu()">
         <span></span>
         <span></span>
