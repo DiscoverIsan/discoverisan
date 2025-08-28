@@ -176,67 +176,95 @@
             margin: 15px auto;
         }
 
-        /* NEW ABOUT SECTION STYLES */
-        .about-flex-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .about-image-column img {
+        /* NEW WELCOME TO ISAN (HERO IMAGE) STYLES */
+        .welcome-hero {
+            position: relative;
             width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 4px;
+            height: 400px; /* Adjust height as needed for mobile */
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            border-radius: 8px; /* Slightly rounded corners */
+            margin-bottom: 30px;
         }
 
-        .about-text-column p {
-            font-size: 1em;
-            margin-bottom: 1em;
+        .welcome-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.2)); /* Subtle gradient for text readability */
+            z-index: 1;
+        }
+
+        .welcome-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            padding: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .welcome-hero-content .section-heading {
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .welcome-hero-content .section-subtitle {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
         }
         
-        /* NEW HISTORY SECTION STYLES */
-        .history-section {
+        .welcome-hero-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* NEW HISTORY SECTION (BALANCED TWO-COLUMN) STYLES */
+        .history-section-new {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin: 30px 0;
+            flex-direction: column; /* Stack on mobile */
+            gap: 30px;
+            margin: 60px 0;
             background: #fff;
-            padding: 20px;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly stronger shadow */
         }
 
-        .history-image-wrapper {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .history-image-wrapper img {
-            width: 100%;
-            height: auto;
-            max-height: 250px; /* Reduced max-height for mobile */
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .history-content {
+        .history-image-col, .history-text-col {
             flex: 1;
         }
-        
-        .history-content h3 {
-            font-size: 1.2em;
+
+        .history-image-col img {
+            width: 100%;
+            height: 280px; /* Fixed height for consistency on mobile */
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .history-text-col h3 {
+            font-size: 1.5em;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #1a1a1a;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        
-        .history-content p {
+
+        .history-text-col p {
             font-size: 1em;
+            margin-bottom: 1em;
         }
+
 
         /* CARD STYLES FOR OTHER SECTIONS */
         .craft-columns,
@@ -400,42 +428,26 @@
                 font-size: 2.5em;
             }
 
-            /* NEW ABOUT SECTION DESKTOP STYLES */
-            .about-flex-container {
-                flex-direction: row;
+            /* WELCOME HERO DESKTOP */
+            .welcome-hero {
+                height: 550px; /* Taller on desktop */
+            }
+            .welcome-hero-content .section-heading {
+                font-size: 3.5em;
+            }
+            .welcome-hero-content p {
+                font-size: 1.3em;
+            }
+
+            /* HISTORY SECTION DESKTOP */
+            .history-section-new {
+                flex-direction: row; /* Two columns on desktop */
                 align-items: center;
             }
 
-            .about-image-column {
-                flex: 1;
+            .history-image-col img {
+                height: 350px; /* Taller on desktop */
             }
-
-            .about-text-column {
-                flex: 1;
-                padding-left: 40px;
-            }
-
-            .about-image-column img {
-                height: 100%;
-            }
-            
-            /* NEW HISTORY SECTION DESKTOP STYLES */
-            .history-section {
-                flex-direction: row;
-                align-items: center;
-                gap: 30px;
-            }
-            .history-image-wrapper {
-                flex: 1;
-                margin-bottom: 0;
-            }
-            .history-image-wrapper img {
-                max-height: 100%;
-            }
-            .history-content {
-                flex: 1;
-            }
-
 
             .craft-columns,
             .flavour-columns,
@@ -479,24 +491,20 @@
     </header>
     
     <section id="about">
-        <div class="section-heading-container">
-            <span class="section-subtitle">A World of Wonder</span>
-            <h2 class="section-heading">Welcome to Isan</h2>
-            <div class="separator"></div>
-        </div>
-        <div class="about-flex-container">
-            <div class="about-image-column">
-                <img src="Discoverisan_Welcome.jpg" alt="A serene view of rice paddies in Isan.">
-            </div>
-            <div class="about-text-column">
+        <div class="welcome-hero" style="background-image: url('Discoverisan_Welcome.jpg');">
+            <div class="welcome-hero-content">
+                <span class="section-subtitle">A World of Wonder</span>
+                <h2 class="section-heading">Welcome to Isan</h2>
+                <div class="separator"></div>
                 <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
             </div>
         </div>
-        <div class="history-section">
-            <div class="history-image-wrapper">
+
+        <div class="history-section-new">
+            <div class="history-image-col">
                 <img src="Discoverisan_History.jpg" alt="Ancient Khmer ruins in Isan.">
             </div>
-            <div class="history-content">
+            <div class="history-text-col">
                 <h3>History of Isan</h3>
                 <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
             </div>
