@@ -1,465 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Isan</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Didot', serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-    }
-
-      nav {
-        width: 100%;
-        background-color: #fff;
-        border-top: 1px solid #111;
-        border-bottom: 1px solid #111;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
- 
-.logo-container {
-  text-align: center;
-  padding: 15px 0 5px;
-  background-color: white;
-  border-bottom: 0.5px solid #111;
-}
-  .logo-container img {
-      height: 50px;
-    }
-   
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-      padding: 5px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
- 
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      margin-top: 10px;
-    }
-
-    .nav-links a {
-      color: #111;
-      text-decoration: none;
-      font-size: 0.9em;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .nav-links.show {
-      display: flex;
-    }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 30px;
-      height: 24px;
-      cursor: pointer;
-      z-index: 1101;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: #111;
-    }
-    header {
-  background: url('Discoverisan_Image1.jpg') no-repeat center center;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-    header div {
-      z-index: 2;
-    }
-    header h1 {
-      font-size: 4em;
-      margin: 0;
-      color: white;
-    }
-    header p {
-      font-size: 1.5em;
-      max-width: 700px;
-      margin-top: 20px;
-      color: white;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2.5em;
-      color: #222;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-    }
-    h3 {
-      font-size: 1.4em;
-      color: #333;
-      margin-top: 0px;
-    }
-    .craft-columns, .flavour-columns, .hospitality-columns {
-      display: grid;
-      gap: 30px;
-    }
-    .craft-columns {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .flavour-columns {
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .hospitality-columns {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .craft-columns div,
-    .flavour-columns div,
-    .hospitality-columns div {
-      background: #f8f8f8;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .craft-columns img, .flavour-columns img, .hospitality-columns img, .landscape-entry img {
-      width: 100%;
-      height: auto;
-      border-radius: 0;
-      margin-bottom: 10px;
-    }
-    .landscape-entry {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 30px;
-      background: #fdfdfd;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .landscape-entry img {
-      width: 200px;
-      height: 130px;
-      margin-right: 20px;
-      border-radius: 0;
-      object-fit: cover;
-    }
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-    footer p {
-      margin: 0;
-      font-size: 0.9em;
-    }
-    footer a {
-      color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* MOBILE STYLES */
-    @media (max-width: 768px) {
-
-        .nav-toggle {
-          display: flex;
-          order: 2;
-          position: absolute;
-          top: 50%;
-          right: 20px;
-          transform: translateY(-50%);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Isan</title>
+    <style>
+        /* BASE STYLES & MOBILE-FIRST LAYOUT */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: white;
-        padding: 15px 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        border-top: 1px solid #ddd;
-      }
+        html {
+            scroll-behavior: smooth;
+        }
 
-      .nav-links.show {
-        display: flex;
-      }
+        body {
+            font-family: 'Didot', serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
 
-      .nav-container {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
+        .logo-container {
+            text-align: center;
+            padding: 15px 0 5px;
+            background-color: white;
+            border-bottom: 0.5px solid #111;
+        }
 
-      .nav-links a {
-        margin: 10px 0;
-        text-align: center;
-      }
-    }
-  </style>
+        .logo-container img {
+            height: 50px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #fff;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-toggle {
+            display: flex; /* Show on mobile */
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 30px;
+            height: 24px;
+            cursor: pointer;
+            z-index: 1101;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #111;
+        }
+
+        .nav-links {
+            display: none; /* Hidden on mobile by default */
+            flex-direction: column;
+            width: 100%;
+            background-color: white;
+            padding: 15px 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #111;
+            text-decoration: none;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        header {
+            background: url('Discoverisan_Image1-mobile.jpg') no-repeat center center;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header div {
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.5em; /* Optimized for mobile */
+            margin: 0;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.2em; /* Optimized for mobile */
+            max-width: 700px;
+            margin-top: 15px;
+            color: white;
+            padding: 0 10px;
+        }
+
+        section {
+            padding: 40px 15px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2em; /* Optimized for mobile */
+            color: #222;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 0px;
+        }
+
+        .craft-columns, .flavour-columns, .hospitality-columns {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr; /* Stacked columns for mobile */
+        }
+
+        .craft-columns div,
+        .flavour-columns div,
+        .hospitality-columns div {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .craft-columns img, .flavour-columns img, .hospitality-columns img, .landscape-entry img {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            margin-bottom: 10px;
+        }
+
+        .landscape-entry {
+            display: flex;
+            flex-direction: column; /* Stacked for mobile */
+            align-items: center;
+            margin-bottom: 30px;
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .landscape-entry img {
+            width: 100%;
+            height: auto;
+            margin-right: 0;
+            margin-bottom: 15px;
+            border-radius: 0;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* DESKTOP STYLES (Min-width media query) */
+        @media (min-width: 769px) {
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+                flex-direction: row;
+                width: auto;
+                position: static;
+                border: none;
+                margin-top: 0;
+            }
+
+            .nav-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+            }
+
+            header {
+                background: url('Discoverisan_Image1.jpg') no-repeat center center;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            header h1 {
+                font-size: 4em;
+            }
+
+            header p {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            h2 {
+                font-size: 2.5em;
+            }
+
+            .craft-columns {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .flavour-columns {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .hospitality-columns {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .landscape-entry {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .landscape-entry img {
+                width: 200px;
+                height: 130px;
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="logo-container">
-    <img src="discoverisan_logo.png" alt="Discover Isan Logo">
-  </div>
-  <nav>
-    <div class="nav-container">
-      <div class="nav-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#crafts">Arts & Crafts</a>
-        <a href="#flavours">Flavours</a>
-        <a href="#landscapes">Landscapes</a>
-        <a href="#hospitality">Hospitality</a>
-        <a href="#business">Business</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="logo-container">
+        <img src="discoverisan_logo.png" alt="Discover Isan Logo">
     </div>
-  </nav>
-  <hr style="border: 1px solid #111; margin: 0 0 20px;" />
-  <header>
-    <div>
-      <h1>Discover Isan</h1>
-    <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
-  </div>
-</header>
-<!-- Main Content Sections -->
-<section id="about">
-  <h2>Welcome to Isan</h2>
-  <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
-  <h3>History of Isan</h3>
-  <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
-</section>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-toggle" onclick="toggleMenu()" aria-controls="navLinks" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#crafts">Arts & Crafts</a>
+                <a href="#flavours">Flavours</a>
+                <a href="#landscapes">Landscapes</a>
+                <a href="#hospitality">Hospitality</a>
+                <a href="#business">Business</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <hr style="border: 1px solid #111; margin: 0 0 20px;" />
+    <header>
+        <div>
+            <h1>Discover Isan</h1>
+            <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
+        </div>
+    </header>
+    <section id="about">
+        <h2>Welcome to Isan</h2>
+        <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
+        <h3>History of Isan</h3>
+        <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
+    </section>
 
-<section id="crafts">
-  <h2>Arts & Crafts</h2>
-  <div class="craft-columns">
-    <div>
-      <img src="Discoverisan_ImageAC1.jpg" alt="Silk Weaving">
-      <h3>Silk Weaving</h3>
-      <p>Silk weaving is an ancient and intricate art in Isan, especially in Khon Kaen and Surin. Using natural dyes and hand looms, artisans craft exquisite pieces of mudmee (ikat) silk with vibrant motifs.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageAC2.jpg" alt="Bamboo Craft">
-      <h3>Bamboo Craft</h3>
-      <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageAC3.jpg" alt="Pottery">
-      <h3>Pottery</h3>
-      <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageAC4.jpg" alt="Other Crafts">
-      <h3>Other Crafts</h3>
-      <p>Additional crafts include indigo dyeing (Sakon Nakhon), knife-making (Nakhon Ratchasima), khaen instrument-making, and palm-leaf weaving for lanterns and ceremonial items.</p>
-    </div>
-  </div>
-</section>
+    <section id="crafts">
+        <h2>Arts & Crafts</h2>
+        <div class="craft-columns">
+            <div>
+                <img src="Discoverisan_ImageAC1.jpg" alt="Silk Weaving">
+                <h3>Silk Weaving</h3>
+                <p>Silk weaving is an ancient and intricate art in Isan, especially in Khon Kaen and Surin. Using natural dyes and hand looms, artisans craft exquisite pieces of mudmee (ikat) silk with vibrant motifs.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageAC2.jpg" alt="Bamboo Craft">
+                <h3>Bamboo Craft</h3>
+                <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageAC3.jpg" alt="Pottery">
+                <h3>Pottery</h3>
+                <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageAC4.jpg" alt="Other Crafts">
+                <h3>Other Crafts</h3>
+                <p>Additional crafts include indigo dyeing (Sakon Nakhon), knife-making (Nakhon Ratchasima), khaen instrument-making, and palm-leaf weaving for lanterns and ceremonial items.</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="flavours">
+        <h2>Flavours of Isan</h2>
+        <div class="flavour-columns">
+            <div>
+                <img src="Discoverisan_ImageFI1.jpg" alt="Som Tam">
+                <h3>Som Tam</h3>
+                <p>Green papaya salad — spicy, tangy, and deeply addictive. It’s one of Isan’s signature dishes, often pounded fresh in roadside stalls.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI2.jpg" alt="Larb">
+                <h3>Larb</h3>
+                <p>A minced meat salad seasoned with roasted rice, lime, and herbs. Often fiery, it reflects the boldness of Isan cuisine.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI3.jpg" alt="Sticky Rice">
+                <h3>Sticky Rice</h3>
+                <p>The staple of every Isan meal, glutinous rice is steamed in bamboo baskets and eaten with hands — a perfect pairing with spicy dishes.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI4.jpg" alt="Sai Krok Isan">
+                <h3>Sai Krok Isan</h3>
+                <p>Fermented pork sausages with a slightly sour taste, often grilled and served with chilies and cabbage. A beloved street snack.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI5.jpg" alt="Gai Yang">
+                <h3>Gai Yang</h3>
+                <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
+                <h3>Nam Tok</h3>
+                <p>Grilled beef salad tossed with lime, mint, shallots, and chili flakes. Its name means “waterfall,” referring to the juices of grilled meat.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI7.jpg" alt="Pla Ra">
+                <h3>Pla Ra</h3>
+                <p>Fermented fish sauce, pungent and complex, used in many Isan dishes for a depth of umami flavour unique to the region.</p>
+            </div>
+            <div>
+                <img src="Discoverisan_ImageFI8.jpg" alt="Tom Saep">
+                <h3>Tom Saep</h3>
+                <p>A hot and sour soup made with herbs like lemongrass, kaffir lime leaves, and galangal. Often includes pork ribs or offal.</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="landscapes">
+        <h2>Landscapes & Nature</h2>
 
+        <h3>Natural Parks & Wonders</h3>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN1.jpg" alt="Phu Kradueng National Park">
+            <div>
+                <strong>Phu Kradueng National Park</strong><br>
+                A high plateau in Loei province, covered in pine forests and home to waterfalls, cliffs, and a unique climate.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN2.jpg" alt="Phu Phra Bat Historical Park">
+            <div>
+                <strong>Phu Phra Bat Historical Park</strong><br>
+                Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.
+            </div>
+        </div>
 
-<section id="flavours">
-  <h2>Flavours of Isan</h2>
-  <div class="flavour-columns">
-    <div>
-      <img src="Discoverisan_ImageFI1.jpg" alt="Som Tam">
-      <h3>Som Tam</h3>
-      <p>Green papaya salad — spicy, tangy, and deeply addictive. It’s one of Isan’s signature dishes, often pounded fresh in roadside stalls.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI2.jpg" alt="Larb">
-      <h3>Larb</h3>
-      <p>A minced meat salad seasoned with roasted rice, lime, and herbs. Often fiery, it reflects the boldness of Isan cuisine.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI3.jpg" alt="Sticky Rice">
-      <h3>Sticky Rice</h3>
-      <p>The staple of every Isan meal, glutinous rice is steamed in bamboo baskets and eaten with hands — a perfect pairing with spicy dishes.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI4.jpg" alt="Sai Krok Isan">
-      <h3>Sai Krok Isan</h3>
-      <p>Fermented pork sausages with a slightly sour taste, often grilled and served with chilies and cabbage. A beloved street snack.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI5.jpg" alt="Gai Yang">
-      <h3>Gai Yang</h3>
-      <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
-      <h3>Nam Tok</h3>
-      <p>Grilled beef salad tossed with lime, mint, shallots, and chili flakes. Its name means “waterfall,” referring to the juices of grilled meat.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI7.jpg" alt="Pla Ra">
-      <h3>Pla Ra</h3>
-      <p>Fermented fish sauce, pungent and complex, used in many Isan dishes for a depth of umami flavour unique to the region.</p>
-    </div>
-    <div>
-      <img src="Discoverisan_ImageFI8.jpg" alt="Tom Saep">
-      <h3>Tom Saep</h3>
-      <p>A hot and sour soup made with herbs like lemongrass, kaffir lime leaves, and galangal. Often includes pork ribs or offal.</p>
-    </div>
-  </div>
-</section>
+        <h3>Historical Sites</h3>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN3.jpg" alt="Phanom Rung Historical Park">
+            <div>
+                <strong>Phanom Rung Historical Park</strong><br>
+                A stunning Khmer temple complex on an extinct volcano, aligned to the sun during the equinox.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN4.jpg" alt="Prasat Hin Mueang Tam">
+            <div>
+                <strong>Prasat Hin Mueang Tam</strong><br>
+                Ancient ruins that display Angkorian influence, surrounded by lotus ponds and scenic landscapes.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN5.jpg" alt="Ban Chiang Archaeological Site">
+            <div>
+                <strong>Ban Chiang Archaeological Site</strong><br>
+                UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.
+            </div>
+        </div>
 
-<section id="landscapes">
-  <h2>Landscapes & Nature</h2>
+        <h3>Rivers & Wetlands</h3>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN6.jpg" alt="Mekong River">
+            <div>
+                <strong>Mekong River</strong><br>
+                Forming the border with Laos, this river is vital for trade, culture, and spiritual practices in Isan.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN7.jpg" alt="Red Lotus Lake">
+            <div>
+                <strong>Red Lotus Lake (Talay Bua Daeng)</strong><br>
+                Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.
+            </div>
+        </div>
 
-  <h3>Natural Parks & Wonders</h3>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN1.jpg" alt="Phu Kradueng National Park">
-    <div><strong>Phu Kradueng National Park</strong><br>A high plateau in Loei province, covered in pine forests and home to waterfalls, cliffs, and a unique climate.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN2.jpg" alt="Phu Phra Bat Historical Park">
-    <div><strong>Phu Phra Bat Historical Park</strong><br>Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.</div>
-  </div>
+        <h3>Cultural & Community Sites</h3>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN8.jpg" alt="Wat Phra That Phanom">
+            <div>
+                <strong>Wat Phra That Phanom</strong><br>
+                One of the most sacred Buddhist temples in the region, with a relic of the Buddha enshrined inside.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN9.jpg" alt="Wat Pa Phu Kon">
+            <div>
+                <strong>Wat Pa Phu Kon</strong><br>
+                A mountaintop temple known for its massive reclining Buddha and scenic views across the forested hills.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN10.jpg" alt="Chiang Khan">
+            <div>
+                <strong>Chiang Khan</strong><br>
+                A charming riverside town with traditional teak houses, morning alms ceremonies, and a laid-back vibe.
+            </div>
+        </div>
+        <div class="landscape-entry">
+            <img src="Discoverisan_ImageLN11.jpg" alt="Kham Chanot">
+            <div>
+                <strong>Kham Chanot</strong><br>
+                A mysterious forest island associated with naga (mythical serpents) and spiritual rituals.
+            </div>
+        </div>
+    </section>
 
-  <h3>Historical Sites</h3>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN3.jpg" alt="Phanom Rung Historical Park">
-    <div><strong>Phanom Rung Historical Park</strong><br>A stunning Khmer temple complex on an extinct volcano, aligned to the sun during the equinox.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN4.jpg" alt="Prasat Hin Mueang Tam">
-    <div><strong>Prasat Hin Mueang Tam</strong><br>Ancient ruins that display Angkorian influence, surrounded by lotus ponds and scenic landscapes.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN5.jpg" alt="Ban Chiang Archaeological Site">
-    <div><strong>Ban Chiang Archaeological Site</strong><br>UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.</div>
-  </div>
+    <section id="hospitality">
+        <h2>Hospitality: Hotels & Restaurants</h2>
+        <div class="hospitality-columns">
+            <div>
+                <h3>Hotels</h3>
+                <p>From boutique guesthouses in Khon Kaen to riverside eco-lodges near the Mekong, Isan offers diverse accommodation. While high-end hotels are rare, many places provide exceptional warmth, service, and authenticity. Cities like Ubon Ratchathani and Nakhon Ratchasima also feature international hotel chains and resorts for comfort-seekers.</p>
+            </div>
+            <div>
+                <h3>Restaurants</h3>
+                <p>Isan cuisine can be found in humble roadside eateries or upscale fusion restaurants. Michelin Guide has started recognising Isan restaurants, especially in Udon Thani and Khon Kaen. Street food remains the backbone — affordable, delicious, and an essential part of the experience.</p>
+            </div>
+            <div>
+                <h3>Suggested Itineraries</h3>
+                <p>Popular circuits include Loei to Nong Khai via Chiang Khan for landscapes and temples, or a heritage and food route through Khon Kaen, Roi Et, and Yasothon. Multi-day trips can also combine nature parks, festivals, and artisan villages. For food lovers, a “flavours of Isan” trail is a must.</p>
+            </div>
+        </div>
+    </section>
 
-  <h3>Rivers & Wetlands</h3>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN6.jpg" alt="Mekong River">
-    <div><strong>Mekong River</strong><br>Forming the border with Laos, this river is vital for trade, culture, and spiritual practices in Isan.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN7.jpg" alt="Red Lotus Lake">
-    <div><strong>Red Lotus Lake (Talay Bua Daeng)</strong><br>Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.</div>
-  </div>
+    <section id="business">
+        <h2>Business & Economy in Isan</h2>
+        <p>Isan's economy is traditionally agricultural — rice farming, sugarcane, cassava, and livestock form the backbone of livelihoods. But in recent years, industries like food processing, textiles, and rubber have grown. Infrastructure development, such as rail and special economic zones (e.g., in Nakhon Ratchasima), is boosting connectivity. Cross-border trade with Laos is significant in provinces like Nong Khai and Mukdahan. The region is increasingly attracting investment in logistics, agritech, and tourism services.</p>
+    </section>
 
-  <h3>Cultural & Community Sites</h3>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN8.jpg" alt="Wat Phra That Phanom">
-    <div><strong>Wat Phra That Phanom</strong><br>One of the most sacred Buddhist temples in the region, with a relic of the Buddha enshrined inside.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN9.jpg" alt="Wat Pa Phu Kon">
-    <div><strong>Wat Pa Phu Kon</strong><br>A mountaintop temple known for its massive reclining Buddha and scenic views across the forested hills.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN10.jpg" alt="Chiang Khan">
-    <div><strong>Chiang Khan</strong><br>A charming riverside town with traditional teak houses, morning alms ceremonies, and a laid-back vibe.</div>
-  </div>
-  <div class="landscape-entry">
-    <img src="Discoverisan_ImageLN11.jpg" alt="Kham Chanot">
-    <div><strong>Kham Chanot</strong><br>A mysterious forest island associated with naga (mythical serpents) and spiritual rituals.</div>
-  </div>
-</section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width:600px;margin:auto;">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
 
-<section id="hospitality">
-  <h2>Hospitality: Hotels & Restaurants</h2>
-  <div class="hospitality-columns">
-    <div>
-      <h3>Hotels</h3>
-      <p>From boutique guesthouses in Khon Kaen to riverside eco-lodges near the Mekong, Isan offers diverse accommodation. While high-end hotels are rare, many places provide exceptional warmth, service, and authenticity. Cities like Ubon Ratchathani and Nakhon Ratchasima also feature international hotel chains and resorts for comfort-seekers.</p>
-    </div>
-    <div>
-      <h3>Restaurants</h3>
-      <p>Isan cuisine can be found in humble roadside eateries or upscale fusion restaurants. Michelin Guide has started recognising Isan restaurants, especially in Udon Thani and Khon Kaen. Street food remains the backbone — affordable, delicious, and an essential part of the experience.</p>
-    </div>
-    <div>
-      <h3>Suggested Itineraries</h3>
-      <p>Popular circuits include Loei to Nong Khai via Chiang Khan for landscapes and temples, or a heritage and food route through Khon Kaen, Roi Et, and Yasothon. Multi-day trips can also combine nature parks, festivals, and artisan villages. For food lovers, a “flavours of Isan” trail is a must.</p>
-    </div>
-  </div>
-</section>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
 
-<section id="business">
-  <h2>Business & Economy in Isan</h2>
-  <p>Isan's economy is traditionally agricultural — rice farming, sugarcane, cassava, and livestock form the backbone of livelihoods. But in recent years, industries like food processing, textiles, and rubber have grown. Infrastructure development, such as rail and special economic zones (e.g., in Nakhon Ratchasima), is boosting connectivity. Cross-border trade with Laos is significant in provinces like Nong Khai and Mukdahan. The region is increasingly attracting investment in logistics, agritech, and tourism services.</p>
-</section>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width:600px;margin:auto;">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+            <button type="submit" style="padding:10px 20px;background-color:#111;color:white;border:none;border-radius:5px;cursor:pointer;">Send</button>
+        </form>
+    </section>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('navLinks');
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
+        function toggleMenu() {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navLinks.classList.toggle('show');
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+        }
 
-    <button type="submit" style="padding:10px 20px;background-color:#111;color:white;border:none;border-radius:5px;cursor:pointer;">Send</button>
-  </form>
-</section>
-<script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('show');
-  }
-</script>
+        navToggle.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>
