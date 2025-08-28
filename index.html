@@ -20,8 +20,8 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif; /* Changed to a modern sans-serif font */
-            background-color: #f7f7f7; /* Lighter background color */
+            font-family: 'Lato', sans-serif;
+            background-color: #f7f7f7;
             color: #1a1a1a;
             line-height: 1.6;
         }
@@ -102,11 +102,11 @@
         header {
             background: url('Discoverisan_Image1-mobile.jpg') no-repeat center center;
             background-size: cover;
-            height: 80vh; /* Reduced header height for a more modern feel */
+            height: 80vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Align content to the bottom */
-            align-items: flex-start; /* Align content to the left */
+            justify-content: flex-end;
+            align-items: flex-start;
             color: white;
             position: relative;
             padding: 30px;
@@ -148,7 +148,7 @@
         
         .section-heading-container {
             margin-bottom: 20px;
-            text-align: left; /* Align to the left */
+            text-align: left;
         }
 
         .section-subtitle {
@@ -176,22 +176,7 @@
             margin: 15px 0;
         }
 
-        .byline {
-            font-style: italic;
-            font-size: 1.1em;
-            color: #666;
-            margin-top: 10px;
-        }
-
         /* UPDATED STYLES FOR CONTENT CARDS */
-        h3 {
-            font-size: 1.4em;
-            color: #1a1a1a;
-            margin-top: 0;
-            text-align: left;
-            text-transform: uppercase; /* ALL CAPS */
-        }
-
         .craft-columns div,
         .flavour-columns div,
         .hospitality-columns div {
@@ -199,21 +184,58 @@
             padding: 20px;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            text-align: left; /* Aligned to the left */
+            text-align: left;
         }
-        
-        .craft-columns img, .flavour-columns img {
+
+        /* Corrected image sizing and styling */
+        .craft-columns img,
+        .flavour-columns img {
             width: 100%;
-            height: 200px;
+            max-height: 200px; /* Use max-height for flexibility */
             object-fit: cover;
             border-radius: 0;
             margin-bottom: 15px;
         }
 
+        /* Updated h3 title styling */
+        .craft-columns h3,
+        .flavour-columns h3,
+        .hospitality-columns h3,
+        .landscape-entry strong {
+            font-size: 1.1em; /* Smaller font size */
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-align: left;
+            color: #1a1a1a;
+        }
+
+        .craft-columns p,
+        .flavour-columns p,
+        .hospitality-columns p {
+            font-size: 1em; /* Standard font size */
+            text-align: left;
+        }
+        
+        /* New styles for the small bar and "Discover" text */
+        .card-separator {
+            width: 40px;
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 15px 0 5px;
+        }
+
+        .card-byline {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666;
+        }
+
         .landscape-entry {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Aligned to the left */
+            align-items: flex-start;
             margin-bottom: 30px;
             background: #fff;
             padding: 15px;
@@ -229,27 +251,13 @@
             border-radius: 0;
         }
         
-        .landscape-entry h3,
-        .landscape-entry p {
-            text-align: left;
-        }
-
         .landscape-entry strong {
-            display: block;
-            text-transform: uppercase;
+            margin-top: 0;
         }
-
-        .card-separator {
-            width: 40px;
-            height: 2px;
-            background-color: #e0e0e0;
-            margin: 15px 0;
-        }
-
-        .card-byline {
-            font-style: italic;
-            font-size: 0.9em;
-            color: #666;
+        
+        .landscape-entry p {
+            font-size: 1em;
+            text-align: left;
         }
 
         footer {
@@ -340,7 +348,7 @@
             }
 
             .section-heading {
-                font-size: 3em; /* Larger on desktop */
+                font-size: 3em;
             }
 
             .craft-columns {
@@ -362,7 +370,7 @@
 
             .landscape-entry img {
                 width: 200px;
-                height: 130px; /* Adjusted height for desktop landscape entries */
+                height: 130px;
                 margin-right: 20px;
                 margin-bottom: 0;
             }
