@@ -99,8 +99,6 @@
             text-align: center;
         }
 
-        /* REMOVED ORIGINAL HEADER */
-
         section {
             padding: 60px 20px;
             max-width: 1200px;
@@ -141,7 +139,7 @@
         .welcome-hero {
             position: relative;
             width: 100%;
-            min-height: 400px; /* Adjust height as needed for mobile */
+            min-height: 400px;
             background-size: cover;
             background-position: center center;
             display: flex;
@@ -150,7 +148,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            margin-bottom: 30px; /* Space below the hero */
+            margin-bottom: 15px; /* Reduced space below the hero */
         }
 
         .welcome-hero::before {
@@ -160,7 +158,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.3)); /* Stronger gradient for text readability */
+            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
             z-index: 1;
         }
 
@@ -168,18 +166,29 @@
             position: relative;
             z-index: 2;
             max-width: 90%;
-            padding: 30px 20px; /* More padding */
+            padding: 30px 20px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         .welcome-hero-content .section-heading {
             color: white;
-            font-size: 2.5em; /* Larger title */
+            font-size: 2.5em;
             margin-bottom: 10px;
+        }
+        
+        /* Reverted subtitle formatting for hero */
+        .welcome-hero-content .section-subtitle {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            display: block;
+            margin-bottom: 5px;
         }
 
         .welcome-hero-content .tagline {
-            font-size: 1.2em; /* New style for the tagline */
+            font-size: 1.2em;
             margin-top: 10px;
             margin-bottom: 20px;
             color: rgba(255,255,255,0.9);
@@ -188,23 +197,23 @@
 
         .welcome-description {
             max-width: 800px;
-            margin: 30px auto 60px auto; /* Space above and below */
+            margin: 15px auto 40px auto; /* Reduced space above and below */
             padding: 0 20px;
             font-size: 1.1em;
-            text-align: center; /* Center the descriptive text */
+            text-align: center;
         }
         
         /* NEW HISTORY SECTION (BALANCED TWO-COLUMN) STYLES */
         .history-section-new {
             display: flex;
-            flex-direction: column; /* Stack on mobile */
+            flex-direction: column;
             gap: 30px;
-            margin: 60px auto; /* Centered with top/bottom margin */
-            max-width: 1200px; /* Constrain width like other sections */
+            margin: 60px auto;
+            max-width: 1200px;
             background: #fff;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Slightly stronger shadow */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
         }
 
         .history-image-col, .history-text-col {
@@ -213,7 +222,7 @@
 
         .history-image-col img {
             width: 100%;
-            height: 280px; /* Fixed height for consistency on mobile */
+            height: 280px;
             object-fit: cover;
             border-radius: 4px;
         }
@@ -241,6 +250,12 @@
             display: grid;
             gap: 20px;
             grid-template-columns: 1fr;
+        }
+        
+        /* Added light background to Flavours section */
+        #flavours {
+            background-color: #ededed;
+            padding: 60px 20px;
         }
 
         .craft-columns div,
@@ -369,8 +384,6 @@
                 transform: scaleX(1);
             }
 
-            /* REMOVED ORIGINAL HEADER */
-
             section {
                 padding: 60px 20px;
             }
@@ -381,13 +394,13 @@
 
             /* WELCOME HERO DESKTOP */
             .welcome-hero {
-                min-height: 550px; /* Taller on desktop */
+                min-height: 550px;
             }
             .welcome-hero-content .section-heading {
-                font-size: 4em; /* Larger title */
+                font-size: 4em;
             }
             .welcome-hero-content .tagline {
-                font-size: 1.5em; /* Larger tagline */
+                font-size: 1.5em;
             }
             .welcome-description {
                 font-size: 1.2em;
@@ -395,12 +408,12 @@
 
             /* HISTORY SECTION DESKTOP */
             .history-section-new {
-                flex-direction: row; /* Two columns on desktop */
+                flex-direction: row;
                 align-items: center;
             }
 
             .history-image-col img {
-                height: 350px; /* Taller on desktop */
+                height: 350px;
             }
 
             .craft-columns,
