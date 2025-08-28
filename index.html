@@ -148,7 +148,7 @@
         
         .section-heading-container {
             margin-bottom: 20px;
-            text-align: center; /* Centered */
+            text-align: center;
         }
 
         .section-subtitle {
@@ -162,7 +162,7 @@
         }
 
         .section-heading {
-            font-size: 2em; /* Smaller font size */
+            font-size: 2em;
             color: #1a1a1a;
             font-weight: 700;
             margin: 0;
@@ -173,13 +173,13 @@
             width: 60px;
             height: 3px;
             background-color: #e0e0e0;
-            margin: 15px auto; /* Centered */
+            margin: 15px auto;
         }
 
-        /* UPDATED STYLES FOR CONTENT CARDS */
         .craft-columns,
         .flavour-columns,
-        .hospitality-columns {
+        .hospitality-columns,
+        .landscape-columns {
             display: grid;
             gap: 20px;
             grid-template-columns: 1fr;
@@ -187,18 +187,20 @@
 
         .craft-columns div,
         .flavour-columns div,
-        .hospitality-columns div {
+        .hospitality-columns div,
+        .landscape-columns div {
             background: #fff;
             padding: 20px;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
             text-align: left;
-            display: flex; /* Use flexbox for vertical alignment */
-            flex-direction: column; /* Stack content vertically */
+            display: flex;
+            flex-direction: column;
         }
 
         .craft-columns img,
-        .flavour-columns img {
+        .flavour-columns img,
+        .landscape-columns img {
             width: 100%;
             height: auto;
             max-height: 200px;
@@ -206,10 +208,21 @@
             border-radius: 0;
             margin-bottom: 15px;
         }
+        
+        /* New style for sub-headings within the cards */
+        .sub-heading-small {
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 5px;
+        }
 
         .craft-columns h3,
         .flavour-columns h3,
-        .hospitality-columns h3 {
+        .hospitality-columns h3,
+        .landscape-columns h3 {
             font-size: 1.1em;
             font-weight: 700;
             text-transform: uppercase;
@@ -221,49 +234,22 @@
 
         .craft-columns p,
         .flavour-columns p,
-        .hospitality-columns p {
+        .hospitality-columns p,
+        .landscape-columns p {
             font-size: 1em;
             text-align: left;
         }
         
-        /* Removed .card-separator as per request */
-
         .card-byline {
             font-style: italic;
             font-size: 0.9em;
             color: #666;
-            margin-top: auto; /* Pushes to the bottom */
-        }
-
-        .landscape-entry {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            background: #fff;
-            padding: 15px;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-
-        .landscape-entry img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border-radius: 0;
+            margin-top: auto;
         }
         
-        .landscape-entry strong {
-            font-size: 1.1em;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-top: 0;
-        }
-
-        .landscape-entry p {
-            font-size: 1em;
-            text-align: left;
+        /* Removed old landscape-entry styling */
+        .landscape-entry {
+            display: none;
         }
 
         footer {
@@ -354,31 +340,17 @@
             }
 
             .section-heading {
-                font-size: 2.5em; /* Adjusted for desktop */
+                font-size: 2.5em;
             }
 
-            .craft-columns {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .flavour-columns {
+            .craft-columns,
+            .flavour-columns,
+            .landscape-columns {
                 grid-template-columns: repeat(4, 1fr);
             }
 
             .hospitality-columns {
                 grid-template-columns: repeat(3, 1fr);
-            }
-
-            .landscape-entry {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            .landscape-entry img {
-                width: 200px;
-                height: 130px;
-                margin-right: 20px;
-                margin-bottom: 0;
             }
         }
     </style>
@@ -521,95 +493,82 @@
             <h2 class="section-heading">Landscapes & Nature</h2>
             <div class="separator"></div>
         </div>
-        <h3>Natural Parks & Wonders</h3>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN1.jpg" alt="Phu Kradueng National Park">
+        <div class="landscape-columns">
             <div>
-                <strong>Phu Kradueng National Park</strong><br>
-                A high plateau in Loei province, covered in pine forests and home to waterfalls, cliffs, and a unique climate.
+                <span class="sub-heading-small">Natural Parks & Wonders</span>
+                <img src="Discoverisan_ImageLN1.jpg" alt="Phu Kradueng National Park">
+                <h3>Phu Kradueng National Park</h3>
+                <p>A high plateau in Loei province, covered in pine forests and home to waterfalls, cliffs, and a unique climate.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN2.jpg" alt="Phu Phra Bat Historical Park">
             <div>
-                <strong>Phu Phra Bat Historical Park</strong><br>
-                Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.
+                <span class="sub-heading-small">Natural Parks & Wonders</span>
+                <img src="Discoverisan_ImageLN2.jpg" alt="Phu Phra Bat Historical Park">
+                <h3>Phu Phra Bat Historical Park</h3>
+                <p>Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <h3>Historical Sites</h3>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN3.jpg" alt="Phanom Rung Historical Park">
             <div>
-                <strong>Phanom Rung Historical Park</strong><br>
-                A stunning Khmer temple complex on an extinct volcano, aligned to the sun during the equinox.
+                <span class="sub-heading-small">Historical Sites</span>
+                <img src="Discoverisan_ImageLN3.jpg" alt="Phanom Rung Historical Park">
+                <h3>Phanom Rung Historical Park</h3>
+                <p>A stunning Khmer temple complex on an extinct volcano, aligned to the sun during the equinox.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN4.jpg" alt="Prasat Hin Mueang Tam">
             <div>
-                <strong>Prasat Hin Mueang Tam</strong><br>
-                Ancient ruins that display Angkorian influence, surrounded by lotus ponds and scenic landscapes.
+                <span class="sub-heading-small">Historical Sites</span>
+                <img src="Discoverisan_ImageLN4.jpg" alt="Prasat Hin Mueang Tam">
+                <h3>Prasat Hin Mueang Tam</h3>
+                <p>Ancient ruins that display Angkorian influence, surrounded by lotus ponds and scenic landscapes.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN5.jpg" alt="Ban Chiang Archaeological Site">
             <div>
-                <strong>Ban Chiang Archaeological Site</strong><br>
-                UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.
+                <span class="sub-heading-small">Historical Sites</span>
+                <img src="Discoverisan_ImageLN5.jpg" alt="Ban Chiang Archaeological Site">
+                <h3>Ban Chiang Archaeological Site</h3>
+                <p>UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <h3>Rivers & Wetlands</h3>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN6.jpg" alt="Mekong River">
             <div>
-                <strong>Mekong River</strong><br>
-                Forming the border with Laos, this river is vital for trade, culture, and spiritual practices in Isan.
+                <span class="sub-heading-small">Rivers & Wetlands</span>
+                <img src="Discoverisan_ImageLN6.jpg" alt="Mekong River">
+                <h3>Mekong River</h3>
+                <p>Forming the border with Laos, this river is vital for trade, culture, and spiritual practices in Isan.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN7.jpg" alt="Red Lotus Lake">
             <div>
-                <strong>Red Lotus Lake (Talay Bua Daeng)</strong><br>
-                Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.
+                <span class="sub-heading-small">Rivers & Wetlands</span>
+                <img src="Discoverisan_ImageLN7.jpg" alt="Red Lotus Lake">
+                <h3>Red Lotus Lake</h3>
+                <p>Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <h3>Cultural & Community Sites</h3>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN8.jpg" alt="Wat Phra That Phanom">
             <div>
-                <strong>Wat Phra That Phanom</strong><br>
-                One of the most sacred Buddhist temples in the region, with a relic of the Buddha enshrined inside.
+                <span class="sub-heading-small">Cultural & Community Sites</span>
+                <img src="Discoverisan_ImageLN8.jpg" alt="Wat Phra That Phanom">
+                <h3>Wat Phra That Phanom</h3>
+                <p>One of the most sacred Buddhist temples in the region, with a relic of the Buddha enshrined inside.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN9.jpg" alt="Wat Pa Phu Kon">
             <div>
-                <strong>Wat Pa Phu Kon</strong><br>
-                A mountaintop temple known for its massive reclining Buddha and scenic views across the forested hills.
+                <span class="sub-heading-small">Cultural & Community Sites</span>
+                <img src="Discoverisan_ImageLN9.jpg" alt="Wat Pa Phu Kon">
+                <h3>Wat Pa Phu Kon</h3>
+                <p>A mountaintop temple known for its massive reclining Buddha and scenic views across the forested hills.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN10.jpg" alt="Chiang Khan">
             <div>
-                <strong>Chiang Khan</strong><br>
-                A charming riverside town with traditional teak houses, morning alms ceremonies, and a laid-back vibe.
+                <span class="sub-heading-small">Cultural & Community Sites</span>
+                <img src="Discoverisan_ImageLN10.jpg" alt="Chiang Khan">
+                <h3>Chiang Khan</h3>
+                <p>A charming riverside town with traditional teak houses, morning alms ceremonies, and a laid-back vibe.</p>
                 <p class="card-byline">Discover</p>
             </div>
-        </div>
-        <div class="landscape-entry">
-            <img src="Discoverisan_ImageLN11.jpg" alt="Kham Chanot">
             <div>
-                <strong>Kham Chanot</strong><br>
-                A mysterious forest island associated with naga (mythical serpents) and spiritual rituals.
+                <span class="sub-heading-small">Cultural & Community Sites</span>
+                <img src="Discoverisan_ImageLN11.jpg" alt="Kham Chanot">
+                <h3>Kham Chanot</h3>
+                <p>A mysterious forest island associated with naga (mythical serpents) and spiritual rituals.</p>
                 <p class="card-byline">Discover</p>
             </div>
         </div>
