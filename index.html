@@ -176,6 +176,69 @@
             margin: 15px auto;
         }
 
+        /* NEW ABOUT SECTION STYLES */
+        .about-flex-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-image-column img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .about-text-column p {
+            font-size: 1em;
+            margin-bottom: 1em;
+        }
+        
+        /* NEW HISTORY SECTION STYLES */
+        .history-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 30px 0;
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .history-image-wrapper {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .history-image-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .history-content {
+            flex: 1;
+        }
+        
+        .history-content h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .history-content p {
+            font-size: 1em;
+        }
+
+        /* CARD STYLES FOR OTHER SECTIONS */
         .craft-columns,
         .flavour-columns,
         .hospitality-columns,
@@ -209,7 +272,6 @@
             margin-bottom: 15px;
         }
         
-        /* New style for sub-headings within the cards */
         .sub-heading-small {
             font-size: 0.8em;
             font-weight: 700;
@@ -245,11 +307,6 @@
             font-size: 0.9em;
             color: #666;
             margin-top: auto;
-        }
-        
-        /* Removed old landscape-entry styling */
-        .landscape-entry {
-            display: none;
         }
 
         footer {
@@ -343,6 +400,40 @@
                 font-size: 2.5em;
             }
 
+            /* NEW ABOUT SECTION DESKTOP STYLES */
+            .about-flex-container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .about-image-column {
+                flex: 1;
+            }
+
+            .about-text-column {
+                flex: 1;
+                padding-left: 40px;
+            }
+
+            .about-image-column img {
+                height: 100%;
+            }
+            
+            /* NEW HISTORY SECTION DESKTOP STYLES */
+            .history-section {
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+            }
+            .history-image-wrapper {
+                flex: 1;
+                margin-bottom: 0;
+            }
+            .history-content {
+                flex: 1;
+            }
+
+
             .craft-columns,
             .flavour-columns,
             .landscape-columns {
@@ -390,9 +481,23 @@
             <h2 class="section-heading">Welcome to Isan</h2>
             <div class="separator"></div>
         </div>
-        <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
-        <h3>History of Isan</h3>
-        <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
+        <div class="about-flex-container">
+            <div class="about-image-column">
+                <img src="Discoverisan_about_image.jpg" alt="A serene view of rice paddies in Isan.">
+            </div>
+            <div class="about-text-column">
+                <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
+            </div>
+        </div>
+        <div class="history-section">
+            <div class="history-image-wrapper">
+                <img src="Discoverisan_history_image.jpg" alt="Ancient Khmer ruins in Isan.">
+            </div>
+            <div class="history-content">
+                <h3>History of Isan</h3>
+                <p>Isan’s history is deeply intertwined with the ancient Khmer empire, with temples and ruins dotting the region dating back over a thousand years. Its people are primarily of Lao descent, and the Lao language (Isan dialect) remains widely spoken. During the 20th century, migration, conflict, and economic shifts shaped the region’s identity — balancing traditional livelihoods with aspirations for progress. Despite economic challenges, Isan retains strong community bonds and cultural pride, preserving its unique heritage and language.</p>
+            </div>
+        </div>
     </section>
 
     <section id="crafts">
