@@ -177,6 +177,14 @@
         }
 
         /* UPDATED STYLES FOR CONTENT CARDS */
+        .craft-columns,
+        .flavour-columns,
+        .hospitality-columns {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
         .craft-columns div,
         .flavour-columns div,
         .hospitality-columns div {
@@ -187,22 +195,20 @@
             text-align: left;
         }
 
-        /* Corrected image sizing and styling */
         .craft-columns img,
         .flavour-columns img {
             width: 100%;
-            max-height: 200px; /* Use max-height for flexibility */
+            height: auto;
+            max-height: 200px; /* Corrected: Use max-height for better responsiveness */
             object-fit: cover;
             border-radius: 0;
             margin-bottom: 15px;
         }
 
-        /* Updated h3 title styling */
         .craft-columns h3,
         .flavour-columns h3,
-        .hospitality-columns h3,
-        .landscape-entry strong {
-            font-size: 1.1em; /* Smaller font size */
+        .hospitality-columns h3 {
+            font-size: 1.1em;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 5px;
@@ -214,11 +220,10 @@
         .craft-columns p,
         .flavour-columns p,
         .hospitality-columns p {
-            font-size: 1em; /* Standard font size */
+            font-size: 1em;
             text-align: left;
         }
         
-        /* New styles for the small bar and "Discover" text */
         .card-separator {
             width: 40px;
             height: 2px;
@@ -252,9 +257,12 @@
         }
         
         .landscape-entry strong {
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
             margin-top: 0;
         }
-        
+
         .landscape-entry p {
             font-size: 1em;
             text-align: left;
