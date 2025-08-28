@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Isan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* BASE STYLES & MOBILE-FIRST LAYOUT */
+        /* BASE STYLES & MOBILE-FIRST LAYOUT - Aligned to BBC Travel */
         * {
             margin: 0;
             padding: 0;
@@ -17,28 +20,27 @@
         }
 
         body {
-            font-family: 'Didot', serif;
-            background-color: #fff;
-            color: #222;
+            font-family: 'Lato', sans-serif; /* Changed to a modern sans-serif font */
+            background-color: #f7f7f7; /* Lighter background color */
+            color: #1a1a1a;
             line-height: 1.6;
         }
 
         .logo-container {
             text-align: center;
-            padding: 15px 0 5px;
+            padding: 20px 0 10px;
             background-color: white;
-            border-bottom: 0.5px solid #111;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .logo-container img {
-            height: 50px;
+            height: 60px;
         }
 
         nav {
             width: 100%;
             background-color: #fff;
-            border-top: 1px solid #111;
-            border-bottom: 1px solid #111;
+            border-bottom: 1px solid #ccc;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -47,21 +49,19 @@
         .nav-container {
             max-width: 1200px;
             margin: auto;
-            text-align: center;
-            padding: 5px 20px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
-
+        
         .nav-toggle {
-            display: flex; /* Show on mobile */
+            display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            width: 30px;
-            height: 24px;
+            width: 25px;
+            height: 20px;
             cursor: pointer;
             z-index: 1101;
         }
@@ -69,12 +69,12 @@
         .nav-toggle span {
             display: block;
             width: 100%;
-            height: 3px;
-            background: #111;
+            height: 2px;
+            background: #1a1a1a;
         }
 
         .nav-links {
-            display: none; /* Hidden on mobile by default */
+            display: none;
             flex-direction: column;
             width: 100%;
             background-color: white;
@@ -90,27 +90,26 @@
         }
 
         .nav-links a {
-            color: #111;
+            color: #1a1a1a;
             text-decoration: none;
-            font-size: 0.9em;
+            font-size: 1em;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin: 10px 0;
+            padding: 10px 0;
             text-align: center;
         }
 
         header {
             background: url('Discoverisan_Image1-mobile.jpg') no-repeat center center;
-            background-attachment: fixed;
             background-size: cover;
-            height: 100vh;
+            height: 80vh; /* Reduced header height for a more modern feel */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            justify-content: flex-end; /* Align content to the bottom */
+            align-items: flex-start; /* Align content to the left */
             color: white;
             position: relative;
+            padding: 30px;
         }
 
         header::after {
@@ -120,92 +119,92 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
 
         header div {
             z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            max-width: 90%;
         }
 
         header h1 {
-            font-size: 2.5em; /* Optimized for mobile */
-            margin: 0;
+            font-size: 2.5em;
+            margin: 0 0 10px;
             color: white;
         }
 
         header p {
-            font-size: 1.2em; /* Optimized for mobile */
-            max-width: 700px;
-            margin-top: 15px;
+            font-size: 1.2em;
             color: white;
-            padding: 0 10px;
         }
 
         section {
-            padding: 40px 15px;
+            padding: 60px 20px;
             max-width: 1200px;
             margin: auto;
         }
 
         h2 {
-            font-size: 2em; /* Optimized for mobile */
-            color: #222;
+            font-size: 2em;
+            color: #1a1a1a;
             margin-bottom: 20px;
-            border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
         }
-
+        
         h3 {
             font-size: 1.4em;
-            color: #333;
-            margin-top: 0px;
+            color: #1a1a1a;
+            margin-top: 0;
         }
 
         .craft-columns, .flavour-columns, .hospitality-columns {
             display: grid;
             gap: 20px;
-            grid-template-columns: 1fr; /* Stacked columns for mobile */
+            grid-template-columns: 1fr;
         }
 
         .craft-columns div,
         .flavour-columns div,
         .hospitality-columns div {
-            background: #f8f8f8;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: center;
         }
-
-        .craft-columns img, .flavour-columns img, .hospitality-columns img, .landscape-entry img {
+        
+        .craft-columns img, .flavour-columns img {
             width: 100%;
-            height: auto;
-            border-radius: 0;
-            margin-bottom: 10px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
 
         .landscape-entry {
             display: flex;
-            flex-direction: column; /* Stacked for mobile */
+            flex-direction: column;
             align-items: center;
             margin-bottom: 30px;
-            background: #fdfdfd;
+            background: #fff;
             padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
 
         .landscape-entry img {
             width: 100%;
-            height: auto;
-            margin-right: 0;
-            margin-bottom: 15px;
-            border-radius: 0;
+            height: 200px;
             object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 4px;
         }
 
         footer {
-            background-color: #111;
+            background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -218,7 +217,7 @@
         }
 
         footer a {
-            color: #ccc;
+            color: #a9a9a9;
             text-decoration: none;
             margin: 0 10px;
         }
@@ -227,7 +226,7 @@
             text-decoration: underline;
         }
 
-        /* DESKTOP STYLES (Min-width media query) */
+        /* DESKTOP STYLES */
         @media (min-width: 769px) {
             .nav-toggle {
                 display: none;
@@ -248,12 +247,34 @@
             }
 
             .nav-links a {
-                margin: 0 10px;
+                margin: 0 15px;
+                padding: 10px 0;
+                position: relative;
+            }
+            
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #1a1a1a;
+                transform: scaleX(0);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links a:hover::after {
+                transform: scaleX(1);
             }
 
             header {
-                background: url('Discoverisan_Image1.jpg') no-repeat center center;
+                height: 100vh;
                 background-attachment: fixed;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: url('Discoverisan_Image1.jpg') no-repeat center center;
                 background-size: cover;
             }
 
@@ -305,7 +326,7 @@
     </div>
     <nav>
         <div class="nav-container">
-            <div class="nav-toggle" onclick="toggleMenu()" aria-controls="navLinks" aria-expanded="false">
+            <div class="nav-toggle" aria-controls="navLinks" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -321,13 +342,13 @@
             </div>
         </div>
     </nav>
-    <hr style="border: 1px solid #111; margin: 0 0 20px;" />
     <header>
         <div>
             <h1>Discover Isan</h1>
             <p>Explore the hidden soul of Thailand: nature, silk, food, and traditions from the heart of the northeast.</p>
         </div>
     </header>
+    
     <section id="about">
         <h2>Welcome to Isan</h2>
         <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
@@ -409,7 +430,6 @@
 
     <section id="landscapes">
         <h2>Landscapes & Nature</h2>
-
         <h3>Natural Parks & Wonders</h3>
         <div class="landscape-entry">
             <img src="Discoverisan_ImageLN1.jpg" alt="Phu Kradueng National Park">
@@ -425,7 +445,6 @@
                 Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.
             </div>
         </div>
-
         <h3>Historical Sites</h3>
         <div class="landscape-entry">
             <img src="Discoverisan_ImageLN3.jpg" alt="Phanom Rung Historical Park">
@@ -448,7 +467,6 @@
                 UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.
             </div>
         </div>
-
         <h3>Rivers & Wetlands</h3>
         <div class="landscape-entry">
             <img src="Discoverisan_ImageLN6.jpg" alt="Mekong River">
@@ -464,7 +482,6 @@
                 Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.
             </div>
         </div>
-
         <h3>Cultural & Community Sites</h3>
         <div class="landscape-entry">
             <img src="Discoverisan_ImageLN8.jpg" alt="Wat Phra That Phanom">
@@ -523,17 +540,21 @@
         <h2>Contact Us</h2>
         <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width:600px;margin:auto;">
             <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-
+            <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:4px;"><br>
             <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;"><br>
-
+            <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:4px;"><br>
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea><br>
-
-            <button type="submit" style="padding:10px 20px;background-color:#111;color:white;border:none;border-radius:5px;cursor:pointer;">Send</button>
+            <textarea id="message" name="message" rows="5" required style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:4px;"></textarea><br>
+            <button type="submit" style="padding:12px 30px;background-color:#1a1a1a;color:white;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">Send</button>
         </form>
     </section>
+
+    <footer>
+        <p>&copy; 2025 Discover Isan. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+        </div>
+    </footer>
 
     <script>
         const navToggle = document.querySelector('.nav-toggle');
