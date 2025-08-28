@@ -146,9 +146,9 @@
             margin: auto;
         }
         
-        /* NEW STYLES FOR BBC TRAVEL-LIKE HEADING */
         .section-heading-container {
             margin-bottom: 20px;
+            text-align: left; /* Align to the left */
         }
 
         .section-subtitle {
@@ -182,18 +182,14 @@
             color: #666;
             margin-top: 10px;
         }
-        /* END NEW STYLES */
 
+        /* UPDATED STYLES FOR CONTENT CARDS */
         h3 {
             font-size: 1.4em;
             color: #1a1a1a;
             margin-top: 0;
-        }
-
-        .craft-columns, .flavour-columns, .hospitality-columns {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: 1fr;
+            text-align: left;
+            text-transform: uppercase; /* ALL CAPS */
         }
 
         .craft-columns div,
@@ -203,7 +199,7 @@
             padding: 20px;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            text-align: center;
+            text-align: left; /* Aligned to the left */
         }
         
         .craft-columns img, .flavour-columns img {
@@ -217,7 +213,7 @@
         .landscape-entry {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Aligned to the left */
             margin-bottom: 30px;
             background: #fff;
             padding: 15px;
@@ -231,6 +227,29 @@
             object-fit: cover;
             margin-bottom: 15px;
             border-radius: 0;
+        }
+        
+        .landscape-entry h3,
+        .landscape-entry p {
+            text-align: left;
+        }
+
+        .landscape-entry strong {
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .card-separator {
+            width: 40px;
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 15px 0;
+        }
+
+        .card-byline {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666;
         }
 
         footer {
@@ -384,7 +403,6 @@
             <span class="section-subtitle">A World of Wonder</span>
             <h2 class="section-heading">Welcome to Isan</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <p>Isan is a land of contrasts — serene rice paddies, colorful festivals, ancient Khmer ruins, and warm, welcoming people. Often overlooked, it's a region rich in heritage and spirit. Its beauty lies not only in landscapes and temples, but in the rhythm of daily life: sticky rice steaming over clay stoves, hand-woven hammocks swinging in the shade, and the gentle melodies of khaen pipes drifting across rice fields.</p>
         <h3>History of Isan</h3>
@@ -396,28 +414,35 @@
             <span class="section-subtitle">Traditional Artistry</span>
             <h2 class="section-heading">Arts & Crafts</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <div class="craft-columns">
             <div>
                 <img src="Discoverisan_ImageAC1.jpg" alt="Silk Weaving">
                 <h3>Silk Weaving</h3>
                 <p>Silk weaving is an ancient and intricate art in Isan, especially in Khon Kaen and Surin. Using natural dyes and hand looms, artisans craft exquisite pieces of mudmee (ikat) silk with vibrant motifs.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageAC2.jpg" alt="Bamboo Craft">
                 <h3>Bamboo Craft</h3>
                 <p>Bamboo is both a symbol of resilience and a practical material in Isan. Villagers weave baskets, trays, fish traps, and even furniture. The designs blend beauty and function, often passed through generations.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageAC3.jpg" alt="Pottery">
                 <h3>Pottery</h3>
                 <p>In Ban Chiang (Udon Thani), prehistoric pottery was unearthed that dates back over 5,000 years — now a UNESCO World Heritage site. Today, artisans still shape pots and ceramic wares by hand, often for cooking or temple use.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageAC4.jpg" alt="Other Crafts">
                 <h3>Other Crafts</h3>
                 <p>Additional crafts include indigo dyeing (Sakon Nakhon), knife-making (Nakhon Ratchasima), khaen instrument-making, and palm-leaf weaving for lanterns and ceremonial items.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
     </section>
@@ -427,48 +452,63 @@
             <span class="section-subtitle">A Culinary Journey</span>
             <h2 class="section-heading">Flavours of Isan</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <div class="flavour-columns">
             <div>
                 <img src="Discoverisan_ImageFI1.jpg" alt="Som Tam">
                 <h3>Som Tam</h3>
                 <p>Green papaya salad — spicy, tangy, and deeply addictive. It’s one of Isan’s signature dishes, often pounded fresh in roadside stalls.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI2.jpg" alt="Larb">
                 <h3>Larb</h3>
                 <p>A minced meat salad seasoned with roasted rice, lime, and herbs. Often fiery, it reflects the boldness of Isan cuisine.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI3.jpg" alt="Sticky Rice">
                 <h3>Sticky Rice</h3>
                 <p>The staple of every Isan meal, glutinous rice is steamed in bamboo baskets and eaten with hands — a perfect pairing with spicy dishes.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI4.jpg" alt="Sai Krok Isan">
                 <h3>Sai Krok Isan</h3>
                 <p>Fermented pork sausages with a slightly sour taste, often grilled and served with chilies and cabbage. A beloved street snack.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI5.jpg" alt="Gai Yang">
                 <h3>Gai Yang</h3>
                 <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
                 <h3>Nam Tok</h3>
                 <p>Grilled beef salad tossed with lime, mint, shallots, and chili flakes. Its name means “waterfall,” referring to the juices of grilled meat.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI7.jpg" alt="Pla Ra">
                 <h3>Pla Ra</h3>
                 <p>Fermented fish sauce, pungent and complex, used in many Isan dishes for a depth of umami flavour unique to the region.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <img src="Discoverisan_ImageFI8.jpg" alt="Tom Saep">
                 <h3>Tom Saep</h3>
                 <p>A hot and sour soup made with herbs like lemongrass, kaffir lime leaves, and galangal. Often includes pork ribs or offal.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
     </section>
@@ -478,7 +518,6 @@
             <span class="section-subtitle">Natural & Historical Wonders</span>
             <h2 class="section-heading">Landscapes & Nature</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <h3>Natural Parks & Wonders</h3>
         <div class="landscape-entry">
@@ -486,6 +525,8 @@
             <div>
                 <strong>Phu Kradueng National Park</strong><br>
                 A high plateau in Loei province, covered in pine forests and home to waterfalls, cliffs, and a unique climate.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -493,6 +534,8 @@
             <div>
                 <strong>Phu Phra Bat Historical Park</strong><br>
                 Sandstone rock formations with prehistoric cave paintings, shrines, and sacred sites.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <h3>Historical Sites</h3>
@@ -501,6 +544,8 @@
             <div>
                 <strong>Phanom Rung Historical Park</strong><br>
                 A stunning Khmer temple complex on an extinct volcano, aligned to the sun during the equinox.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -508,6 +553,8 @@
             <div>
                 <strong>Prasat Hin Mueang Tam</strong><br>
                 Ancient ruins that display Angkorian influence, surrounded by lotus ponds and scenic landscapes.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -515,6 +562,8 @@
             <div>
                 <strong>Ban Chiang Archaeological Site</strong><br>
                 UNESCO World Heritage site known for prehistoric bronze age settlements and pottery.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <h3>Rivers & Wetlands</h3>
@@ -523,6 +572,8 @@
             <div>
                 <strong>Mekong River</strong><br>
                 Forming the border with Laos, this river is vital for trade, culture, and spiritual practices in Isan.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -530,6 +581,8 @@
             <div>
                 <strong>Red Lotus Lake (Talay Bua Daeng)</strong><br>
                 Every winter, thousands of pink lotuses bloom on this freshwater lake in Udon Thani.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <h3>Cultural & Community Sites</h3>
@@ -538,6 +591,8 @@
             <div>
                 <strong>Wat Phra That Phanom</strong><br>
                 One of the most sacred Buddhist temples in the region, with a relic of the Buddha enshrined inside.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -545,6 +600,8 @@
             <div>
                 <strong>Wat Pa Phu Kon</strong><br>
                 A mountaintop temple known for its massive reclining Buddha and scenic views across the forested hills.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -552,6 +609,8 @@
             <div>
                 <strong>Chiang Khan</strong><br>
                 A charming riverside town with traditional teak houses, morning alms ceremonies, and a laid-back vibe.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
         <div class="landscape-entry">
@@ -559,6 +618,8 @@
             <div>
                 <strong>Kham Chanot</strong><br>
                 A mysterious forest island associated with naga (mythical serpents) and spiritual rituals.
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
     </section>
@@ -568,20 +629,25 @@
             <span class="section-subtitle">Comfort & Cuisine</span>
             <h2 class="section-heading">Hospitality: Hotels & Restaurants</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <div class="hospitality-columns">
             <div>
                 <h3>Hotels</h3>
                 <p>From boutique guesthouses in Khon Kaen to riverside eco-lodges near the Mekong, Isan offers diverse accommodation. While high-end hotels are rare, many places provide exceptional warmth, service, and authenticity. Cities like Ubon Ratchathani and Nakhon Ratchasima also feature international hotel chains and resorts for comfort-seekers.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <h3>Restaurants</h3>
                 <p>Isan cuisine can be found in humble roadside eateries or upscale fusion restaurants. Michelin Guide has started recognising Isan restaurants, especially in Udon Thani and Khon Kaen. Street food remains the backbone — affordable, delicious, and an essential part of the experience.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
             <div>
                 <h3>Suggested Itineraries</h3>
                 <p>Popular circuits include Loei to Nong Khai via Chiang Khan for landscapes and temples, or a heritage and food route through Khon Kaen, Roi Et, and Yasothon. Multi-day trips can also combine nature parks, festivals, and artisan villages. For food lovers, a “flavours of Isan” trail is a must.</p>
+                <div class="card-separator"></div>
+                <p class="card-byline">Discover</p>
             </div>
         </div>
     </section>
@@ -591,7 +657,6 @@
             <span class="section-subtitle">A Growing Economy</span>
             <h2 class="section-heading">Business & Economy in Isan</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <p>Isan's economy is traditionally agricultural — rice farming, sugarcane, cassava, and livestock form the backbone of livelihoods. But in recent years, industries like food processing, textiles, and rubber have grown. Infrastructure development, such as rail and special economic zones (e.g., in Nakhon Ratchasima), is boosting connectivity. Cross-border trade with Laos is significant in provinces like Nong Khai and Mukdahan. The region is increasingly attracting investment in logistics, agritech, and tourism services.</p>
     </section>
@@ -601,7 +666,6 @@
             <span class="section-subtitle">Get in Touch</span>
             <h2 class="section-heading">Contact Us</h2>
             <div class="separator"></div>
-            <p class="byline">Discover Isan</p>
         </div>
         <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width:600px;margin:auto;">
             <label for="name">Name:</label><br>
