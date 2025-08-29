@@ -100,7 +100,7 @@
         }
 
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
         }
@@ -148,7 +148,7 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            margin-bottom: 15px; /* Reduced space below the hero */
+            margin-bottom: 15px;
         }
 
         .welcome-hero::before {
@@ -176,7 +176,6 @@
             margin-bottom: 10px;
         }
         
-        /* Reverted subtitle formatting for hero */
         .welcome-hero-content .section-subtitle {
             font-size: 0.8em;
             text-transform: uppercase;
@@ -197,7 +196,7 @@
 
         .welcome-description {
             max-width: 800px;
-            margin: 15px auto 40px auto; /* Reduced space above and below */
+            margin: 15px auto 40px auto;
             padding: 0 20px;
             font-size: 1.1em;
             text-align: center;
@@ -208,7 +207,7 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
-            margin: 60px auto;
+            margin: 40px auto; /* Reduced margin */
             max-width: 1200px;
             background: #fff;
             padding: 25px;
@@ -252,10 +251,14 @@
             grid-template-columns: 1fr;
         }
         
-        /* Added light background to Flavours section */
-        #flavours {
+        .full-width-section {
             background-color: #ededed;
-            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
         }
 
         .craft-columns div,
@@ -324,7 +327,7 @@
             color: white;
             text-align: center;
             padding: 40px 20px;
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         footer p {
@@ -508,63 +511,65 @@
         </div>
     </section>
 
-    <section id="flavours">
-        <div class="section-heading-container">
-            <span class="section-subtitle">A Culinary Journey</span>
-            <h2 class="section-heading">Flavours of Isan</h2>
-            <div class="separator"></div>
-        </div>
-        <div class="flavour-columns">
-            <div>
-                <img src="Discoverisan_ImageFI1.jpg" alt="Som Tam">
-                <h3>Som Tam</h3>
-                <p>Green papaya salad — spicy, tangy, and deeply addictive. It’s one of Isan’s signature dishes, often pounded fresh in roadside stalls.</p>
-                <p class="card-byline">Discover</p>
+    <div class="full-width-section">
+        <section id="flavours">
+            <div class="section-heading-container">
+                <span class="section-subtitle">A Culinary Journey</span>
+                <h2 class="section-heading">Flavours of Isan</h2>
+                <div class="separator"></div>
             </div>
-            <div>
-                <img src="Discoverisan_ImageFI2.jpg" alt="Larb">
-                <h3>Larb</h3>
-                <p>A minced meat salad seasoned with roasted rice, lime, and herbs. Often fiery, it reflects the boldness of Isan cuisine.</p>
-                <p class="card-byline">Discover</p>
+            <div class="flavour-columns">
+                <div>
+                    <img src="Discoverisan_ImageFI1.jpg" alt="Som Tam">
+                    <h3>Som Tam</h3>
+                    <p>Green papaya salad — spicy, tangy, and deeply addictive. It’s one of Isan’s signature dishes, often pounded fresh in roadside stalls.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI2.jpg" alt="Larb">
+                    <h3>Larb</h3>
+                    <p>A minced meat salad seasoned with roasted rice, lime, and herbs. Often fiery, it reflects the boldness of Isan cuisine.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI3.jpg" alt="Sticky Rice">
+                    <h3>Sticky Rice</h3>
+                    <p>The staple of every Isan meal, glutinous rice is steamed in bamboo baskets and eaten with hands — a perfect pairing with spicy dishes.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI4.jpg" alt="Sai Krok Isan">
+                    <h3>Sai Krok Isan</h3>
+                    <p>Fermented pork sausages with a slightly sour taste, often grilled and served with chilies and cabbage. A beloved street snack.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI5.jpg" alt="Gai Yang">
+                    <h3>Gai Yang</h3>
+                    <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
+                    <h3>Nam Tok</h3>
+                    <p>Grilled beef salad tossed with lime, mint, shallots, and chili flakes. Its name means “waterfall,” referring to the juices of grilled meat.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI7.jpg" alt="Pla Ra">
+                    <h3>Pla Ra</h3>
+                    <p>Fermented fish sauce, pungent and complex, used in many Isan dishes for a depth of umami flavour unique to the region.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
+                <div>
+                    <img src="Discoverisan_ImageFI8.jpg" alt="Tom Saep">
+                    <h3>Tom Saep</h3>
+                    <p>A hot and sour soup made with herbs like lemongrass, kaffir lime leaves, and galangal. Often includes pork ribs or offal.</p>
+                    <p class="card-byline">Discover</p>
+                </div>
             </div>
-            <div>
-                <img src="Discoverisan_ImageFI3.jpg" alt="Sticky Rice">
-                <h3>Sticky Rice</h3>
-                <p>The staple of every Isan meal, glutinous rice is steamed in bamboo baskets and eaten with hands — a perfect pairing with spicy dishes.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-            <div>
-                <img src="Discoverisan_ImageFI4.jpg" alt="Sai Krok Isan">
-                <h3>Sai Krok Isan</h3>
-                <p>Fermented pork sausages with a slightly sour taste, often grilled and served with chilies and cabbage. A beloved street snack.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-            <div>
-                <img src="Discoverisan_ImageFI5.jpg" alt="Gai Yang">
-                <h3>Gai Yang</h3>
-                <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-            <div>
-                <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
-                <h3>Nam Tok</h3>
-                <p>Grilled beef salad tossed with lime, mint, shallots, and chili flakes. Its name means “waterfall,” referring to the juices of grilled meat.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-            <div>
-                <img src="Discoverisan_ImageFI7.jpg" alt="Pla Ra">
-                <h3>Pla Ra</h3>
-                <p>Fermented fish sauce, pungent and complex, used in many Isan dishes for a depth of umami flavour unique to the region.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-            <div>
-                <img src="Discoverisan_ImageFI8.jpg" alt="Tom Saep">
-                <h3>Tom Saep</h3>
-                <p>A hot and sour soup made with herbs like lemongrass, kaffir lime leaves, and galangal. Often includes pork ribs or offal.</p>
-                <p class="card-byline">Discover</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <section id="landscapes">
         <div class="section-heading-container">
