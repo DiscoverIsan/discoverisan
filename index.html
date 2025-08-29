@@ -7,9 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
     <style>
         /* BASE STYLES & MOBILE-FIRST LAYOUT - Aligned to BBC Travel */
         * {
@@ -321,10 +318,11 @@
             text-align: left;
         }
         
+        /* Updated styling for the card link with golden color */
         .card-link {
             font-style: normal;
             font-size: 0.9em;
-            color: #D4AF37;
+            color: #D4AF37; /* Golden color from the logo */
             font-weight: bold;
             text-decoration: none;
             margin-top: auto;
@@ -333,10 +331,11 @@
         }
         
         .card-link:hover {
-            color: #b8860b;
+            color: #b8860b; /* A slightly darker gold for hover effect */
             text-decoration: underline;
         }
         
+        /* Old byline class replaced by card-link */
         .card-byline {
             display: none;
         }
@@ -495,7 +494,7 @@
 
         <div class="history-section-new">
             <div class="history-image-col">
-                <img src="Discoverisan_History.jpg" alt="Ancient Khmer ruins in Isan.">
+                <img src="discoverisan_history.jpg" alt="Ancient Khmer ruins in Isan.">
             </div>
             <div class="history-text-col">
                 <h3>History of Isan</h3>
@@ -584,7 +583,7 @@
                     <h3>Gai Yang</h3>
                     <p>Grilled chicken, usually marinated in lemongrass, garlic, and fish sauce, and served with dipping sauces. A weekend favourite.</p>
                     <a href="#" class="card-link">&rarr; Discover</a>
-            </div>
+                </div>
                 <div>
                     <span class="sub-heading-small">Traditional Flavours</span>
                     <img src="Discoverisan_ImageFI6.jpg" alt="Nam Tok">
@@ -732,7 +731,11 @@
     </section>
 
     <section id="business">
-        <h2>Business & Economy in Isan</h2>
+        <div class="section-heading-container">
+            <span class="section-subtitle">A Growing Economy</span>
+            <h2 class="section-heading">Business & Economy in Isan</h2>
+            <div class="separator"></div>
+        </div>
         <p>Isan's economy is traditionally agricultural — rice farming, sugarcane, cassava, and livestock form the backbone of livelihoods. But in recent years, industries like food processing, textiles, and rubber have grown. Infrastructure development, such as rail and special economic zones (e.g., in Nakhon Ratchasima), is boosting connectivity. Cross-border trade with Laos is significant in provinces like Nong Khai and Mukdahan. The region is increasingly attracting investment in logistics, agritech, and tourism services.</p>
     </section>
 
