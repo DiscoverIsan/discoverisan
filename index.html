@@ -28,7 +28,7 @@
 
         .logo-container {
             text-align: center;
-            padding: 20px 0 5px; /* Reduced bottom padding */
+            padding: 20px 0 5px;
             background-color: white;
             border-bottom: 1px solid #e0e0e0;
         }
@@ -49,7 +49,7 @@
         .nav-container {
             max-width: 1200px;
             margin: auto;
-            padding: 10px 20px;
+            padding: 5px 20px; /* Reduced vertical padding */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -78,7 +78,7 @@
             flex-direction: column;
             width: 100%;
             background-color: white;
-            padding: 15px 0;
+            padding: 10px 0; /* Reduced padding */
             position: absolute;
             top: 100%;
             left: 0;
@@ -95,7 +95,7 @@
             font-size: 1em;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 10px 0;
+            padding: 5px 0; /* Reduced padding */
             text-align: center;
         }
 
@@ -135,7 +135,6 @@
             margin: 15px auto;
         }
 
-        /* NEW WELCOME TO ISAN (PRIMARY HERO IMAGE) STYLES */
         .welcome-hero {
             position: relative;
             width: 100%;
@@ -148,8 +147,8 @@
             text-align: center;
             color: white;
             overflow: hidden;
-            margin-top: 5px; /* Reduced top margin */
-            margin-bottom: 5px; /* Reduced bottom margin */
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
 
         .welcome-hero::before {
@@ -197,13 +196,12 @@
 
         .welcome-description {
             max-width: 800px;
-            margin: 15px auto; /* Reduced space */
+            margin: 15px auto;
             padding: 0 20px;
             font-size: 1.1em;
             text-align: center;
         }
         
-        /* NEW HISTORY SECTION (BALANCED TWO-COLUMN) STYLES */
         .history-section-new {
             display: flex;
             flex-direction: column;
@@ -241,8 +239,6 @@
             margin-bottom: 1em;
         }
 
-
-        /* CARD STYLES FOR OTHER SECTIONS */
         .craft-columns,
         .flavour-columns,
         .hospitality-columns,
@@ -364,11 +360,12 @@
             .nav-container {
                 flex-direction: row;
                 justify-content: center;
+                padding: 5px 20px; /* Reduced vertical padding */
             }
 
             .nav-links a {
-                margin: 0 15px;
-                padding: 10px 0;
+                margin: 0 10px; /* Reduced margin */
+                padding: 5px 0; /* Reduced padding */
                 position: relative;
             }
             
@@ -396,9 +393,10 @@
                 font-size: 2.5em;
             }
 
-            /* WELCOME HERO DESKTOP */
             .welcome-hero {
                 min-height: 550px;
+                margin-top: 5px; /* Reduced top margin */
+                margin-bottom: 5px; /* Reduced bottom margin */
             }
             .welcome-hero-content .section-heading {
                 font-size: 4em;
@@ -410,7 +408,6 @@
                 font-size: 1.2em;
             }
 
-            /* HISTORY SECTION DESKTOP */
             .history-section-new {
                 flex-direction: row;
                 align-items: center;
