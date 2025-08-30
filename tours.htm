@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Isan - Bespoke Tours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* BASE STYLES & MOBILE-FIRST LAYOUT - Aligned to BBC Travel */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f7f7f7;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 20px 0 5px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-container img {
+            height: 60px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 25px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 1101;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .section-heading-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .section-heading {
+            font-size: 2em;
+            color: #1a1a1a;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .separator {
+            width: 60px;
+            height: 3px;
+            background-color: #e0e0e0;
+            margin: 15px auto;
+        }
+
+        /* NEW TOURS HERO */
+        .tours-hero {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .tours-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+        
+        .tours-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            padding: 30px 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        
+        .tours-hero-content .section-heading {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .tours-hero-content .tagline {
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+        }
+        
+        /* NEW TOUR CARDS */
+        .tour-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+        
+        .tour-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .tour-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .tour-card h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .tour-card .tour-theme {
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .tour-card ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        
+        .tour-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95em;
+        }
+        
+        .tour-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-cta .cta-button {
+            padding: 12px 30px;
+            background-color: #D4AF37;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-cta .cta-button:hover {
+            background-color: #b8860b;
+        }
+
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #a9a9a9;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* DESKTOP STYLES */
+        @media (min-width: 769px) {
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+                flex-direction: row;
+                width: auto;
+                position: static;
+                border: none;
+                margin-top: 0;
+            }
+
+            .nav-container {
+                flex-direction: row;
+                justify-content: center;
+                padding: 5px 20px;
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+                padding: 5px 0;
+                position: relative;
+            }
+            
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #1a1a1a;
+                transform: scaleX(0);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links a:hover::after {
+                transform: scaleX(1);
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+            
+            .tours-hero {
+                min-height: 550px;
+                margin-bottom: 60px;
+            }
+            
+            .tours-hero-content .section-heading {
+                font-size: 4em;
+            }
+            
+            .tours-hero-content .tagline {
+                font-size: 1.5em;
+            }
+            
+            .tour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tour-card img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="discoverisan_logo.png" alt="Discover Isan Logo">
+    </div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-toggle" aria-controls="navLinks" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#crafts">Arts & Crafts</a>
+                <a href="#flavours">Flavours</a>
+                <a href="#wineries">Wineries</a>
+                <a href="#landscapes">Landscapes</a>
+                <a href="#hospitality">Hospitality</a>
+                <a href="tours.html">Tours</a>
+                <a href="#business">Business</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="tours-hero" style="background-image: url('Discoverisan_Tours_Hero.jpg');">
+        <div class="tours-hero-content">
+            <span class="section-subtitle">A Curated Journey</span>
+            <h2 class="section-heading">Bespoke Isan Journeys</h2>
+            <div class="separator"></div>
+            <p class="tagline">Elegant comfort, authentic experiences, and a gateway to Isan's unseen beauty.</p>
+        </div>
+    </div>
+    
+    <section>
+        <div class="section-heading-container">
+            <span class="section-subtitle">Our Mission</span>
+            <h2 class="section-heading">Beyond a Travel Agency</h2>
+            <div class="separator"></div>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+            Our vision is to become the premier gateway for international travellers to experience Isan’s unseen beauty in elegant comfort. We are not just a travel agency, we are:
+        </p>
+        <ul style="list-style: none; text-align: center; max-width: 800px; margin: 20px auto 40px auto; font-style: italic;">
+            <li>A bilingual, content-rich portal promoting Isan’s culture, nature, and economy</li>
+            <li>A bespoke concierge and tour operator for high-net-worth travellers</li>
+            <li>A B2B gateway for businesses exploring artisan sourcing and regional investment</li>
+        </ul>
+    </section>
+    
+    <section>
+        <div class="section-heading-container">
+            <span class="section-subtitle">Our Thematic Tours</span>
+            <h2 class="section-heading">Curated Experiences</h2>
+            <div class="separator"></div>
+        </div>
+        <div class="tour-grid">
+            <div class="tour-card">
+                <img src="tour_cultural.jpg" alt="Local artisans in a silk weaving workshop.">
+                <h3>Cultural Immersion</h3>
+                <span class="tour-theme">Arts, crafts, temples</span>
+                <ul>
+                    <li>Duration: 5–7 days</li>
+                    <li>Features: Silk workshops, village homestays (upgraded), heritage ruins</li>
+                </ul>
+            </div>
+            <div class="tour-card">
+                <img src="tour_food.jpg" alt="A local chef cooking a traditional Isan dish.">
+                <h3>Gastronomic Journey</h3>
+                <span class="tour-theme">Food, wine, markets</span>
+                <ul>
+                    <li>Duration: 4–6 days</li>
+                    <li>Features: Cooking with local chefs, vineyard tastings, local food trail</li>
+                </ul>
+            </div>
+            <div class="tour-card">
+                <img src="tour_mekong.jpg" alt="A private boat cruise on the Mekong River.">
+                <h3>Mekong Majesty</h3>
+                <span class="tour-theme">Landscapes, rivers</span>
+                <ul>
+                    <li>Duration: 6–8 days</li>
+                    <li>Features: Private boat rides, luxury riverside stays, waterfalls, Chiang Khan</li>
+                </ul>
+            </div>
+            <div class="tour-card">
+                <img src="tour_wellness.jpg" alt="A serene outdoor meditation session in a forest.">
+                <h3>Nature & Wellness</h3>
+                <span class="tour-theme">Parks, wellness, retreat</span>
+                <ul>
+                    <li>Duration: 5–9 days</li>
+                    <li>Features: Glamping, guided hikes, Thai massage, forest meditation</li>
+                </ul>
+            </div>
+            <div class="tour-card">
+                <img src="tour_business.jpg" alt="Business people visiting an agritech farm.">
+                <h3>Business Discovery Tour</h3>
+                <span class="tour-theme">Crafts, agritech, logistics</span>
+                <ul>
+                    <li>Duration: 3–5 days</li>
+                    <li>Features: Artisan networks, cooperative visits, sourcing tours</li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact-cta">
+            <a href="index.html#contact" class="cta-button">Enquire About Your Bespoke Tour</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Discover Isan. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('navLinks');
+
+        function toggleMenu() {
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+            navLinks.classList.toggle('show');
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
