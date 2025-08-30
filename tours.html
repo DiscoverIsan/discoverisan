@@ -247,8 +247,9 @@
             text-align: center;
         }
         
+        /* UPDATED CTA BUTTON FOR MOBILE */
         .contact-cta .cta-button {
-            padding: 12px 30px;
+            padding: 12px 20px;
             background-color: #D4AF37;
             color: white;
             font-weight: bold;
@@ -257,12 +258,44 @@
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s ease;
+            white-space: normal;
         }
         
         .contact-cta .cta-button:hover {
             background-color: #b8860b;
         }
 
+        /* NEW OUR SERVICES SECTION */
+        .our-services-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        .services-text-col, .services-image-col {
+            flex: 1;
+        }
+
+        .services-image-col img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .services-text-col h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
 
         footer {
             background-color: #1a1a1a;
@@ -354,6 +387,20 @@
             .tour-card img {
                 height: 250px;
             }
+
+            .our-services-section {
+                flex-direction: row;
+                align-items: center;
+            }
+            .services-text-col {
+                padding-right: 40px;
+            }
+            .services-image-col {
+                order: 2; /* Move image to the right on desktop */
+            }
+            .services-image-col img {
+                height: 350px;
+            }
         }
     </style>
 </head>
@@ -393,19 +440,15 @@
     </div>
     
     <section>
-        <div class="section-heading-container">
-            <span class="section-subtitle">Our Mission</span>
-            <h2 class="section-heading">Beyond a Travel Agency</h2>
-            <div class="separator"></div>
+        <div class="our-services-section">
+            <div class="services-text-col">
+                <h3>Your Premier Isan Travel Partner</h3>
+                <p>While many of Isan's hidden treasures remain unadvertised, our curated services provide a bilingual gateway to its rich culture, nature, and traditions. We don't just organize tours—we serve as a dedicated concierge, bridging language barriers and crafting elegant, authentic journeys for discerning international travelers and business investors. We are your trusted partner, ensuring you experience the true soul of the region in unparalleled comfort.</p>
+            </div>
+            <div class="services-image-col">
+                <img src="Discoverisan_Guide.jpg" alt="A smiling female tour guide in Isan.">
+            </div>
         </div>
-        <p style="text-align: center; max-width: 800px; margin: auto;">
-            Our vision is to become the premier gateway for international travellers to experience Isan’s unseen beauty in elegant comfort. We are not just a travel agency, we are:
-        </p>
-        <ul style="list-style: none; text-align: center; max-width: 800px; margin: 20px auto 40px auto; font-style: italic;">
-            <li>A bilingual, content-rich portal promoting Isan’s culture, nature, and economy</li>
-            <li>A bespoke concierge and tour operator for high-net-worth travellers</li>
-            <li>A B2B gateway for businesses exploring artisan sourcing and regional investment</li>
-        </ul>
     </section>
     
     <section>
