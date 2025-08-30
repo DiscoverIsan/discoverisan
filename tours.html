@@ -265,7 +265,7 @@
             background-color: #b8860b;
         }
 
-        /* NEW OUR SERVICES SECTION */
+        /* OUR SERVICES SECTION */
         .our-services-section {
             display: flex;
             flex-direction: column;
@@ -281,13 +281,22 @@
             flex: 1;
         }
 
-        .services-image-col img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 4px;
+        /* --- FIX: ADJUSTED FOR IMAGE VISIBILITY --- */
+        .services-image-col {
+            min-height: 250px; /* Ensure a minimum height for the image container */
+            display: flex; /* Use flex to center the image if smaller */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
         }
         
+        .services-image-col img {
+            width: 100%;
+            max-height: 300px; /* Limit max height on mobile to prevent overflow */
+            object-fit: contain; /* Important: ensures image scales without cropping */
+            border-radius: 4px;
+        }
+        /* --- END FIX --- */
+
         .services-text-col h3 {
             font-size: 1.5em;
             font-weight: 700;
@@ -397,9 +406,11 @@
             }
             .services-image-col {
                 order: 2;
+                min-height: unset; /* Reset min-height for desktop */
             }
             .services-image-col img {
-                height: 350px;
+                height: 350px; /* Original height for desktop */
+                max-height: none; /* No max height limit on desktop */
             }
         }
     </style>
