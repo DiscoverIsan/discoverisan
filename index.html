@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
-    <link rel="icon" href="favicon.ico?v=1" type="image/x-icon">
+    <!-- Favicon link: Place your converted favicon.ico file in the root directory -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <style>
         /* BASE STYLES & MOBILE-FIRST LAYOUT - Aligned to BBC Travel */
@@ -139,7 +140,8 @@
         }
 
         .welcome-hero,
-        .wineries-hero {
+        .wineries-hero,
+        .tours-callout {
             position: relative;
             width: 100%;
             min-height: 400px;
@@ -156,7 +158,8 @@
         }
 
         .welcome-hero::before,
-        .wineries-hero::before {
+        .wineries-hero::before,
+        .tours-callout::before {
             content: '';
             position: absolute;
             top: 0;
@@ -168,7 +171,8 @@
         }
         
         .welcome-hero-content,
-        .wineries-hero-content {
+        .wineries-hero-content,
+        .tours-callout-content {
             position: relative;
             z-index: 2;
             max-width: 90%;
@@ -177,14 +181,16 @@
         }
         
         .welcome-hero-content .section-heading,
-        .wineries-hero-content .section-heading {
+        .wineries-hero-content .section-heading,
+        .tours-callout-content .section-heading {
             color: white;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
         
         .welcome-hero-content .section-subtitle,
-        .wineries-hero-content .section-subtitle {
+        .wineries-hero-content .section-subtitle,
+        .tours-callout-content .section-subtitle {
             font-size: 0.8em;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -195,7 +201,8 @@
         }
 
         .welcome-hero-content .tagline,
-        .wineries-hero-content .tagline {
+        .wineries-hero-content .tagline,
+        .tours-callout-content .tagline {
             font-size: 1.2em;
             margin-top: 10px;
             margin-bottom: 20px;
@@ -341,6 +348,25 @@
             display: none;
         }
 
+        .tours-link-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin-top: 20px;
+            background-color: #D4AF37;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tours-link-btn:hover {
+            background-color: #b8860b;
+        }
+
+
         footer {
             background-color: #1a1a1a;
             color: white;
@@ -416,10 +442,18 @@
             }
             
             .welcome-hero,
-            .wineries-hero {
+            .wineries-hero,
+            .tours-callout {
                 min-height: 550px;
                 margin-top: 5px;
                 margin-bottom: 5px;
+            }
+            
+            .tours-callout-content .section-heading {
+                font-size: 4em;
+            }
+            .tours-callout-content .tagline {
+                font-size: 1.5em;
             }
 
             .welcome-hero-content .section-heading,
@@ -618,7 +652,18 @@
             <p class="tagline">The Khao Yai region of Isan is home to Thailand's most acclaimed "new latitude" wineries. Discover award-winning vineyards like GranMonte and PB Valley, where stunning landscapes meet unique vintages and fine dining experiences. Explore cellars, indulge in wine tasting, and savor gourmet food pairings amidst picturesque vineyards.</p>
         </div>
     </div>
-
+    
+    <!-- New Section: Discover Our Exclusive Tours -->
+    <div id="tours-callout" class="tours-callout" style="background-image: url('Discoverisan_Tours_Hero.jpg');">
+        <div class="tours-callout-content">
+            <span class="section-subtitle">A Curated Journey</span>
+            <h2 class="section-heading">Discover Our Exclusive Tours</h2>
+            <div class="separator"></div>
+            <p class="tagline">Experience Isan through bespoke tours focused on culture, gastronomy, nature, or business. Our concierge service ensures an elegant and authentic adventure tailored to you.</p>
+            <a href="tours.html" class="tours-link-btn">Learn More</a>
+        </div>
+    </div>
+    
     <section id="landscapes">
         <div class="section-heading-container">
             <span class="section-subtitle">Natural & Historical Wonders</span>
