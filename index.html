@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon link: Place your converted favicon.ico file in the root directory -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <style>
@@ -289,7 +288,8 @@
 
         .craft-columns img,
         .flavour-columns img,
-        .landscape-columns img {
+        .landscape-columns img,
+        .hospitality-columns img {
             width: 100%;
             height: auto;
             max-height: 200px;
@@ -365,7 +365,6 @@
         .tours-link-btn:hover {
             background-color: #b8860b;
         }
-
 
         footer {
             background-color: #1a1a1a;
@@ -487,6 +486,9 @@
 
             .hospitality-columns {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            .hospitality-columns img {
+                height: 200px;
             }
         }
     </style>
@@ -652,18 +654,7 @@
             <p class="tagline">The Khao Yai region of Isan is home to Thailand's most acclaimed "new latitude" wineries. Discover award-winning vineyards like GranMonte and PB Valley, where stunning landscapes meet unique vintages and fine dining experiences. Explore cellars, indulge in wine tasting, and savor gourmet food pairings amidst picturesque vineyards.</p>
         </div>
     </div>
-    
-    <!-- New Section: Discover Our Exclusive Tours -->
-    <div id="tours-callout" class="tours-callout" style="background-image: url('Discoverisan_Tours_Hero.jpg');">
-        <div class="tours-callout-content">
-            <span class="section-subtitle">A Curated Journey</span>
-            <h2 class="section-heading">Discover Our Exclusive Tours</h2>
-            <div class="separator"></div>
-            <p class="tagline">Experience Isan through bespoke tours focused on culture, gastronomy, nature, or business. Our concierge service ensures an elegant and authentic adventure tailored to you.</p>
-            <a href="tours.html" class="tours-link-btn">Learn More</a>
-        </div>
-    </div>
-    
+
     <section id="landscapes">
         <div class="section-heading-container">
             <span class="section-subtitle">Natural & Historical Wonders</span>
@@ -750,38 +741,50 @@
             </div>
         </div>
     </section>
+    
+    <div id="tours-callout" class="tours-callout" style="background-image: url('Discoverisan_Tours2.jpg');">
+        <div class="tours-callout-content">
+            <span class="section-subtitle">A Curated Journey</span>
+            <h2 class="section-heading">Discover Our Exclusive Tours</h2>
+            <div class="separator"></div>
+            <p class="tagline">Experience Isan through bespoke tours focused on culture, gastronomy, nature, or business. Our concierge service ensures an elegant and authentic adventure tailored to you.</p>
+            <a href="tours.html" class="tours-link-btn">Learn More</a>
+        </div>
+    </div>
 
     <section id="hospitality">
         <div class="section-heading-container">
             <span class="section-subtitle">Comfort & Cuisine</span>
-            <h2 class="section-heading">Hospitality: Hotels & Restaurants</h2>
+            <h2 class="section-heading">Hospitality</h2>
             <div class="separator"></div>
         </div>
         <div class="hospitality-columns">
             <div>
+                <span class="sub-heading-small">Hotels</span>
+                <img src="hospitality_hotels.jpg" alt="A luxurious boutique hotel room in Isan.">
                 <h3>Hotels</h3>
                 <p>From boutique guesthouses in Khon Kaen to riverside eco-lodges near the Mekong, Isan offers diverse accommodation. While high-end hotels are rare, many places provide exceptional warmth, service, and authenticity. Cities like Ubon Ratchathani and Nakhon Ratchasima also feature international hotel chains and resorts for comfort-seekers.</p>
                 <a href="#" class="card-link">&rarr; Discover</a>
             </div>
             <div>
+                <span class="sub-heading-small">Restaurants</span>
+                <img src="hospitality_restaurants.jpg" alt="An elegant restaurant serving modern Isan food.">
                 <h3>Restaurants</h3>
                 <p>Isan cuisine can be found in humble roadside eateries or upscale fusion restaurants. Michelin Guide has started recognising Isan restaurants, especially in Udon Thani and Khon Kaen. Street food remains the backbone — affordable, delicious, and an essential part of the experience.</p>
                 <a href="#" class="card-link">&rarr; Discover</a>
             </div>
             <div>
-                <h3>Suggested Itineraries</h3>
-                <p>Popular circuits include Loei to Nong Khai via Chiang Khan for landscapes and temples, or a heritage and food route through Khon Kaen, Roi Et, and Yasothon. Multi-day trips can also combine nature parks, festivals, and artisan villages. For food lovers, a “flavours of Isan” trail is a must.</p>
+                <span class="sub-heading-small">Coffee Shops & Bars</span>
+                <img src="hospitality_bars.jpg" alt="A trendy bar serving craft cocktails.">
+                <h3>Coffee Shops & Bars</h3>
+                <p>Explore Isan's burgeoning urban scene. From artisan coffee shops serving locally grown beans to trendy bars with signature cocktails, these spots offer a relaxing break and a glimpse into modern Isan life, perfect for a casual evening.</p>
                 <a href="#" class="card-link">&rarr; Discover</a>
             </div>
         </div>
     </section>
 
     <section id="business">
-        <div class="section-heading-container">
-            <span class="section-subtitle">A Growing Economy</span>
-            <h2 class="section-heading">Business & Economy in Isan</h2>
-            <div class="separator"></div>
-        </div>
+        <h2>Business & Economy in Isan</h2>
         <p>Isan's economy is traditionally agricultural — rice farming, sugarcane, cassava, and livestock form the backbone of livelihoods. But in recent years, industries like food processing, textiles, and rubber have grown. Infrastructure development, such as rail and special economic zones (e.g., in Nakhon Ratchasima), is boosting connectivity. Cross-border trade with Laos is significant in provinces like Nong Khai and Mukdahan. The region is increasingly attracting investment in logistics, agritech, and tourism services.</p>
     </section>
 
